@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="怎样清除讨厌的手机模拟大师？, 仙女秘境">
-    <meta name="description" content="  手机模拟大师是鲁大师推出的在电脑上运行手机应用的软件，听起来很不错是吧？呵呵，这东西一旦下载了，就很难卸载掉，因为它会隐藏。你手机模拟大师打开文件所在位置，准备卸载它的时候，却发现，这玩意不见了！怎么办？别急，下面是卸载的方法。
-
-电脑">
+    <meta name="keywords" content="java的垃圾收集机制, 仙女秘境">
+    <meta name="description" content="1. 什么是垃圾收集机制？垃圾收集器是一种Java 内部机制，负责释放内存，即从内存中删除不必要的对象。它在System类中，即System.gc()。
+2. 什么时候回收？当一个对象的引用不存在时原本分配给这个对象的这块空间就应该被回收。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@
 
     
 
-    <title>怎样清除讨厌的手机模拟大师？ | 仙女秘境</title>
+    <title>java的垃圾收集机制 | 仙女秘境</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">怎样清除讨厌的手机模拟大师？</h1>
+                    <h1 class="description center-align post-title">java的垃圾收集机制</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/">
-                                <span class="chip bg-color">流氓软件</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
-                                <span class="chip bg-color">心情日记</span>
+                            <a href="/tags/java%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">java语法</span>
                             </a>
                         
                     </div>
@@ -448,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
-                                小知识
+                            <a href="/categories/java/" class="post-category">
+                                java
                             </a>
                         
                     </div>
@@ -482,19 +477,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>  手机模拟大师是鲁大师推出的在电脑上运行手机应用的软件，听起来很不错是吧？呵呵，这东西一旦下载了，就很难卸载掉，因为它会隐藏。你手机模拟大师打开文件所在位置，准备卸载它的时候，却发现，这玩意不见了！怎么办？别急，下面是卸载的方法。</p>
+                <h4 id="1-什么是垃圾收集机制？"><a href="#1-什么是垃圾收集机制？" class="headerlink" title="1. 什么是垃圾收集机制？"></a>1. 什么是垃圾收集机制？</h4><p>垃圾收集器是一种Java 内部机制，负责释放内存，即从内存中删除不必要的对象。它在System类中，即System.gc()。</p>
+<h4 id="2-什么时候回收？"><a href="#2-什么时候回收？" class="headerlink" title="2. 什么时候回收？"></a>2. 什么时候回收？</h4><p>当一个对象的引用不存在时原本分配给这个对象的这块空间就应该被回收。分两种情况：<br>第一种，将对象的引用设置为null。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Cat(String s)&#123;</span><br><span class="line">        <span class="built_in">this</span>.name=s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Cat cat=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;小花猫&quot;</span>);</span><br><span class="line">        cat=<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种，一个类声明了两个对象a1和a2，再将a1的引用赋给a2,即a2&#x3D;a1,那么这两个对象就具有相同的引用，即占据同一块a1的内存，那么原本分配给a2的内存就应该被回收了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Cat(String s)&#123;</span><br><span class="line">        <span class="built_in">this</span>.name=s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Cat cat1=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;橘猫&quot;</span>);</span><br><span class="line">        Cat cat2=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;中华田园猫&quot;</span>);</span><br><span class="line">        cat1=cat2;</span><br><span class="line">        System.out.println(cat1.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="3-垃圾收集器的特点？"><a href="#3-垃圾收集器的特点？" class="headerlink" title="3. 垃圾收集器的特点？"></a>3. 垃圾收集器的特点？</h4><p>在后台“移动”程序，类似扫地机，在程序运行时多次启动，因此不必显式调用它并给它命令。在垃圾收集器到达需要回收的对象时，就让对象调用finalize()方法。（finalize()方法来自于Object类，而这个类是所有类的祖先类，所以每个对象都有这个方法。就像equals(),  hashCode()和 toString()）但是它并不总是在对象被销毁之前被调用，举个例子：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Cat</span> &#123;</span><br><span class="line"><span class="keyword">static</span> <span class="built_in">int</span> num=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1000000</span>;i++)&#123;</span><br><span class="line">            Cat cat=<span class="keyword">new</span> Cat();</span><br><span class="line">            cat=<span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;垃圾收集机制发挥作用的次数为： &quot;</span>+num);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span>()throws Throwable</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;这个猫对象被摧毁啦！&quot;</span>);</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看看它的结果<br><img src="/assets/laji.jpg" alt="结果"><br>代码已经覆盖了finalize方法，就是说，每执行一次，会打印出一句“这个猫对象被摧毁啦！”，并且num+1,理论上num应等于1000000才对，但实际上num&#x3D;187462,这意味着垃圾收集机制只执行了187462次。事实告诉我们这个东西并不可靠。</p>
+<h4 id="4-怎么做？"><a href="#4-怎么做？" class="headerlink" title="4.怎么做？"></a>4.怎么做？</h4><p>不要依赖 finalize()释放关键资源的方法。 JVM 可能会调用它，也可能不会。垃圾回收器仅仅能做的是尽可能保证可用内存的使用效率，让可用内存得到高效的管理。程序员可以影响垃圾回收的执行，但不能控制。但当对象在其处于活动状态时拥有一些性能关键资源（例如，打开的数据库连接），则最好创建并显式调用特殊方法以在不再需要该对象时释放它们，以免造成内存泄漏。</p>
 <ol>
-<li>电脑右下角找到手机模拟大师运行图标，点击右键，选择“退出”；<br> <img src="/assets/sh1.jpg" alt="1"></li>
-<li>然后点击我的电脑，在C盘中找到MobileEmuMaster文件夹。<br> <img src="/assets/sh2.jpg" alt="2"></li>
-<li>双击进入MobileEmuMaster文件夹，找到“uninst.exe”文件，双击执行。<br> <img src="/assets/sh4.jpg" alt="3"></li>
-<li>点击继续卸载。<br> <img src="/assets/sh5.jpg" alt="4"></li>
-<li>找到右下角的“残忍卸载”，点击。<br> <img src="/assets/sh6.jpg" alt="5"></li>
-<li>点击“我不要了”。<br> <img src="/assets/sh7.jpg" alt="6"></li>
-<li>点击“反馈并卸载”。<br> <img src="/assets/sh8.jpg" alt="7"></li>
-<li>等待进度完成。<br> <img src="/assets/sh9.jpg" alt="8"></li>
-<li>点击“确认”，至此，卸载完成即可。<br> <img src="/assets/sh10.jpg" alt="9"></li>
+<li>将无用对象设置为null；</li>
+<li>System.gc();<br>虽然可以通过System.gc()来强制回收垃圾，但是这个命令下达后无法保证JVM会立即响应执行，但经验表明，下达命令后，会在短期内执行你的请求。</li>
 </ol>
-<p> 写在最后：对于我这种对游戏根本不care的人来说，是不可能下载这种东西的，至于它怎么跑到我电脑上的，说出来就很离谱。本来准备下载一个暴风影视5准备和舍友看马嘉祺，（额，舍友的目的是看马嘉祺，我的目的是看看我的电脑能不能放DVD😅）。然后吧，马嘉祺没看成，下载暴风影视顺便还送我了块牛皮糖👿。看着我的C盘的内存0.1G,0.1G的消失，我内心那个焦急啊！烦死了，以后再也不敢乱下东西了，然后疯狂百度……直到最后找到了这个卸载的方法。卸载完以后，整个世界瞬间就清净了。😄</p>
 
                 
             </div>
@@ -521,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sakuraywy.github.io/2022/07/07/%E6%80%8E%E6%A0%B7%E6%B8%85%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84%E6%89%8B%E6%9C%BA%E6%A8%A1%E6%8B%9F%E5%A4%A7%E5%B8%88%EF%BC%9F/">https://sakuraywy.github.io/2022/07/07/%E6%80%8E%E6%A0%B7%E6%B8%85%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84%E6%89%8B%E6%9C%BA%E6%A8%A1%E6%8B%9F%E5%A4%A7%E5%B8%88%EF%BC%9F/</a>
+                    <a href="https://sakuraywy.github.io/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/">https://sakuraywy.github.io/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,12 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/">
-                                    <span class="chip bg-color">流氓软件</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
-                                    <span class="chip bg-color">心情日记</span>
+                                <a href="/tags/java%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">java语法</span>
                                 </a>
                             
                         </div>
@@ -738,9 +732,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/">
                     <div class="card-image">
@@ -758,9 +753,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -773,6 +768,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -791,13 +787,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/07/04/%E6%B1%82%E7%B4%A0%E6%95%B0%E6%96%B9%E6%B3%95/">
+                <a href="/2022/07/07/%E6%80%8E%E6%A0%B7%E6%B8%85%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84%E6%89%8B%E6%9C%BA%E6%A8%A1%E6%8B%9F%E5%A4%A7%E5%B8%88%EF%BC%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="求1~100素数方法">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="怎样清除讨厌的手机模拟大师？">
                         
-                        <span class="card-title">求1~100素数方法</span>
+                        <span class="card-title">怎样清除讨厌的手机模拟大师？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -808,14 +804,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
-                                    算法入门
+                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    小知识
                                 </a>
                             
                             
@@ -825,8 +821,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
-                        <span class="chip bg-color">算法入门</span>
+                    <a href="/tags/%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">流氓软件</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
+                        <span class="chip bg-color">心情日记</span>
                     </a>
                     
                 </div>
