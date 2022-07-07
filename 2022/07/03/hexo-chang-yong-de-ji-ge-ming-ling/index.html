@@ -4,8 +4,29 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="求1~100素数方法, 仙女秘境">
-    <meta name="description" content="1. 试除法（直接上埃氏筛法，就是有根号那个）一个数设为a，若它是合数，则a的公因数其中一个大于√a，那么另外一个就小于√a，要么就两个都等于√a；而素数只有它本身和1两个因数。在用试除法判断a是否为素数时，只用把a模上从2到√a，若结果出">
+    <meta name="keywords" content="hexo常用的几个命令, 仙女秘境">
+    <meta name="description" content="首先得在博客根目录下Git Bash Here
+
+
+$ hexo s
+
+
+
+启动本地服务器，可以预览博客效果，Ctrl+C结束
+
+
+$hexo new “笔记标题”
+
+
+
+新建一篇标题为“笔记标题”的文章
+
+
+$hexo d
+
+
+
+生成网站">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +40,7 @@
 
     
 
-    <title>求1~100素数方法 | 仙女秘境</title>
+    <title>hexo常用的几个命令 | 仙女秘境</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">求1~100素数方法</h1>
+                    <h1 class="description center-align post-title">hexo常用的几个命令</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +451,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
-                                <span class="chip bg-color">算法入门</span>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">博客入门</span>
                             </a>
                         
                     </div>
@@ -442,8 +463,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
-                                算法入门
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/" class="post-category">
+                                博客入门
                             </a>
                         
                     </div>
@@ -455,12 +476,22 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-04
+                    2022-07-03
                 </div>
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-07-03
+                </div>
+                
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    284
+                </div>
                 
 
                 
@@ -476,11 +507,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-试除法（直接上埃氏筛法，就是有根号那个）"><a href="#1-试除法（直接上埃氏筛法，就是有根号那个）" class="headerlink" title="1. 试除法（直接上埃氏筛法，就是有根号那个）"></a>1. 试除法（直接上埃氏筛法，就是有根号那个）</h2><p>一个数设为a，若它是合数，则a的公因数其中一个大于√a，那么另外一个就小于√a，要么就两个都等于√a；而素数只有它本身和1两个因数。在用试除法判断a是否为素数时，只用把a模上从2到√a，若结果出现0，直接跳出这个数的判断循环，紧接着下一个；若模到√a结果都不是0的话，a就是素数，这个时候被模的数就大于√a，根据这个标志就可以得到素数啦！（废话不多，上代码）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Prime</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>( j=<span class="number">2</span>;j&lt;Math.sqrt(i);j++)&#123;<span class="comment">//Math.sqrt(i)也可以改成i/2,下面也要一起改</span></span><br><span class="line">          <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(j&gt;Math.sqrt(i))</span><br><span class="line">          System.out.println(i);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-欧拉筛法"><a href="#2-欧拉筛法" class="headerlink" title="2. 欧拉筛法"></a>2. 欧拉筛法</h2><p>先假设每一个数都是素数，从2开始，看后面的每一个数是不是质数的倍数，若是，则筛去。由于每个数只会被筛一次，所以时间复杂度为O(n)。<br>假设这里有1至100的数字，1不是素数，那就从2开始，筛除（2<em>2，2</em>3，2<em>4……2</em>50(2<em>50)&gt;&#x3D;100），即筛出了除2以外2的倍数；到3，筛除（3</em>3,3<em>4,3</em>5……3<em>33（3</em>34&gt;100)），即筛除了3的倍数；以此类推，因为10*10&gt;&#x3D;100,所以筛到10的倍数就可以了！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">prime</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> n=<span class="number">100</span>;</span><br><span class="line">        <span class="type">int</span> array[]=<span class="keyword">new</span> <span class="title class_">int</span> [n];</span><br><span class="line">        <span class="type">boolean</span> is_prime[]=<span class="keyword">new</span> <span class="title class_">boolean</span>[n];</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">           array[i]=i;</span><br><span class="line">           is_prime[i]=<span class="literal">true</span>;</span><br><span class="line">       &#125;<span class="comment">//先初始化数组，假设每一个数都是素数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i*i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i*i;j&lt;n;j+=i)&#123;<span class="comment">//j+=相当于j=i*(i+1),j=i*(i+2)……</span></span><br><span class="line">                is_prime[j]=<span class="literal">false</span>;<span class="comment">//筛除质数的倍数</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(is_prime[i])&#123;</span><br><span class="line">              System.out.println(array[i]);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+                <p>首先得在博客根目录下Git Bash Here</p>
+<ol>
+<li><blockquote>
+<p>$ hexo s</p>
+</blockquote>
+</li>
+</ol>
+<p>启动本地服务器，可以预览博客效果，Ctrl+C结束</p>
+<ol start="2">
+<li><blockquote>
+<p>$hexo new “笔记标题”</p>
+</blockquote>
+</li>
+</ol>
+<p>新建一篇标题为“笔记标题”的文章</p>
+<ol start="3">
+<li><blockquote>
+<p>$hexo d</p>
+</blockquote>
+</li>
+</ol>
+<p>生成网站静态文件，并部署到设定的仓库，这样就相当于把网页公之于众</p>
+<ol start="4">
+<li><blockquote>
+<p>$ hexo clean</p>
+</blockquote>
+</li>
+</ol>
+<p>清楚缓存文件db.json和已生成的静态文件（网站显示异常时可以执行这条命令试试）</p>
+<ol start="5">
+<li><blockquote>
+<p>$hexo g</p>
+</blockquote>
+</li>
+</ol>
+<p>生成网站静态文件到默认设置的public文件夹。</p>
+<ul>
+<li>便于查看网站生成的静态文件或者手动部署网站；</li>
+<li>如果使用自动部署，不需要先执行该命令；</li>
+<li>hexo g 是 hexo generate 的缩写，命令效果一致。</li>
+</ul>
+<ol start="6">
+<li><blockquote>
+<p>$hexo new page 标题</p>
+</blockquote>
+</li>
+</ol>
+<p>新建一个标题为“标题”的页面，默认链接地址为 主页地址&#x2F;标题&#x2F;</p>
+<ul>
+<li>标题可以为中文，但一般习惯用英文；</li>
+<li>页面标题和文章一样可以随意修改；</li>
+<li>页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</li>
+</ul>
 
                 
             </div>
@@ -507,7 +586,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sakuraywy.github.io/2022/07/04/%E6%B1%82%E7%B4%A0%E6%95%B0%E6%96%B9%E6%B3%95/">https://sakuraywy.github.io/2022/07/04/%E6%B1%82%E7%B4%A0%E6%95%B0%E6%96%B9%E6%B3%95/</a>
+                    <a href="https://sakuraywy.github.io/2022/07/03/hexo-chang-yong-de-ji-ge-ming-ling/">https://sakuraywy.github.io/2022/07/03/hexo-chang-yong-de-ji-ge-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,8 +624,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
-                                    <span class="chip bg-color">算法入门</span>
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">博客入门</span>
                                 </a>
                             
                         </div>
@@ -567,132 +646,6 @@
 
                 </div>
             </div>
-            
-                <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-
             
         </div>
     </div>
@@ -724,60 +677,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/07/%E6%80%8E%E6%A0%B7%E6%B8%85%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84%E6%89%8B%E6%9C%BA%E6%A8%A1%E6%8B%9F%E5%A4%A7%E5%B8%88%EF%BC%9F/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="怎样清除讨厌的手机模拟大师？">
-                        
-                        <span class="card-title">怎样清除讨厌的手机模拟大师？</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    小知识
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">流氓软件</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
-                        <span class="chip bg-color">心情日记</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/07/03/MarkDown%E8%AF%AD%E6%B3%95/">
+                <a href="/2022/07/03/markdown-yu-fa/">
                     <div class="card-image">
                         
                         
@@ -793,9 +693,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -813,6 +713,51 @@
                     
                     <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/">
                         <span class="chip bg-color">博客入门</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/03/sui-bian-liao-yi-liao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="随便聊一聊">
+                        
+                        <span class="card-title">随便聊一聊</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            杨宛荧
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
+                        <span class="chip bg-color">心情日记</span>
                     </a>
                     
                 </div>
@@ -972,11 +917,11 @@
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="8524692679"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
@@ -998,7 +943,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2022</span>
             
             <a href="/about" target="_blank">杨宛荧</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1029,13 +974,13 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/sakuraYWY" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1084126002@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1045,7 +990,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1084126002" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1084126002" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1054,10 +999,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

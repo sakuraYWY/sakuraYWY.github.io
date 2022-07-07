@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java的垃圾收集机制, 仙女秘境">
-    <meta name="description" content="1. 什么是垃圾收集机制？垃圾收集器是一种Java 内部机制，负责释放内存，即从内存中删除不必要的对象。它在System类中，即System.gc()。
-2. 什么时候回收？当一个对象的引用不存在时原本分配给这个对象的这块空间就应该被回收。">
+    <meta name="keywords" content="求1~100素数方法, 仙女秘境">
+    <meta name="description" content="1. 试除法（直接上埃氏筛法，就是有根号那个）一个数设为a，若它是合数，则a的公因数其中一个大于√a，那么另外一个就小于√a，要么就两个都等于√a；而素数只有它本身和1两个因数。在用试除法判断a是否为素数时，只用把a模上从2到√a，若结果出">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
 
     
 
-    <title>java的垃圾收集机制 | 仙女秘境</title>
+    <title>求1~100素数方法 | 仙女秘境</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java的垃圾收集机制</h1>
+                    <h1 class="description center-align post-title">求1~100素数方法</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">java语法</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">算法入门</span>
                             </a>
                         
                     </div>
@@ -443,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java/" class="post-category">
-                                java
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                算法入门
                             </a>
                         
                     </div>
@@ -456,12 +455,22 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-07
+                    2022-07-04
                 </div>
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-07-04
+                </div>
+                
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    511
+                </div>
                 
 
                 
@@ -477,22 +486,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-什么是垃圾收集机制？"><a href="#1-什么是垃圾收集机制？" class="headerlink" title="1. 什么是垃圾收集机制？"></a>1. 什么是垃圾收集机制？</h4><p>垃圾收集器是一种Java 内部机制，负责释放内存，即从内存中删除不必要的对象。它在System类中，即System.gc()。</p>
-<h4 id="2-什么时候回收？"><a href="#2-什么时候回收？" class="headerlink" title="2. 什么时候回收？"></a>2. 什么时候回收？</h4><p>当一个对象的引用不存在时原本分配给这个对象的这块空间就应该被回收。分两种情况：<br>第一种，将对象的引用设置为null。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Cat(String s)&#123;</span><br><span class="line">        <span class="built_in">this</span>.name=s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Cat cat=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;小花猫&quot;</span>);</span><br><span class="line">        cat=<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="1-试除法（直接上埃氏筛法，就是有根号那个）"><a href="#1-试除法（直接上埃氏筛法，就是有根号那个）" class="headerlink" title="1. 试除法（直接上埃氏筛法，就是有根号那个）"></a>1. 试除法（直接上埃氏筛法，就是有根号那个）</h2><p>一个数设为a，若它是合数，则a的公因数其中一个大于√a，那么另外一个就小于√a，要么就两个都等于√a；而素数只有它本身和1两个因数。在用试除法判断a是否为素数时，只用把a模上从2到√a，若结果出现0，直接跳出这个数的判断循环，紧接着下一个；若模到√a结果都不是0的话，a就是素数，这个时候被模的数就大于√a，根据这个标志就可以得到素数啦！（废话不多，上代码）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Prime</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>( j=<span class="number">2</span>;j&lt;Math.sqrt(i);j++)&#123;<span class="comment">//Math.sqrt(i)也可以改成i/2,下面也要一起改</span></span><br><span class="line">          <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(j&gt;Math.sqrt(i))</span><br><span class="line">          System.out.println(i);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-欧拉筛法"><a href="#2-欧拉筛法" class="headerlink" title="2. 欧拉筛法"></a>2. 欧拉筛法</h2><p>先假设每一个数都是素数，从2开始，看后面的每一个数是不是质数的倍数，若是，则筛去。由于每个数只会被筛一次，所以时间复杂度为O(n)。<br>假设这里有1至100的数字，1不是素数，那就从2开始，筛除（2<em>2，2</em>3，2<em>4……2</em>50(2<em>50)&gt;&#x3D;100），即筛出了除2以外2的倍数；到3，筛除（3</em>3,3<em>4,3</em>5……3<em>33（3</em>34&gt;100)），即筛除了3的倍数；以此类推，因为10*10&gt;&#x3D;100,所以筛到10的倍数就可以了！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">prime</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> n=<span class="number">100</span>;</span><br><span class="line">        <span class="type">int</span> array[]=<span class="keyword">new</span> <span class="title class_">int</span> [n];</span><br><span class="line">        <span class="type">boolean</span> is_prime[]=<span class="keyword">new</span> <span class="title class_">boolean</span>[n];</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">           array[i]=i;</span><br><span class="line">           is_prime[i]=<span class="literal">true</span>;</span><br><span class="line">       &#125;<span class="comment">//先初始化数组，假设每一个数都是素数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i*i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i*i;j&lt;n;j+=i)&#123;<span class="comment">//j+=相当于j=i*(i+1),j=i*(i+2)……</span></span><br><span class="line">                is_prime[j]=<span class="literal">false</span>;<span class="comment">//筛除质数的倍数</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(is_prime[i])&#123;</span><br><span class="line">              System.out.println(array[i]);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>第二种，一个类声明了两个对象a1和a2，再将a1的引用赋给a2,即a2&#x3D;a1,那么这两个对象就具有相同的引用，即占据同一块a1的内存，那么原本分配给a2的内存就应该被回收了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Cat(String s)&#123;</span><br><span class="line">        <span class="built_in">this</span>.name=s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Cat cat1=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;橘猫&quot;</span>);</span><br><span class="line">        Cat cat2=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;中华田园猫&quot;</span>);</span><br><span class="line">        cat1=cat2;</span><br><span class="line">        System.out.println(cat1.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="3-垃圾收集器的特点？"><a href="#3-垃圾收集器的特点？" class="headerlink" title="3. 垃圾收集器的特点？"></a>3. 垃圾收集器的特点？</h4><p>在后台“移动”程序，类似扫地机，在程序运行时多次启动，因此不必显式调用它并给它命令。在垃圾收集器到达需要回收的对象时，就让对象调用finalize()方法。（finalize()方法来自于Object类，而这个类是所有类的祖先类，所以每个对象都有这个方法。就像equals(),  hashCode()和 toString()）但是它并不总是在对象被销毁之前被调用，举个例子：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Cat</span> &#123;</span><br><span class="line"><span class="keyword">static</span> <span class="built_in">int</span> num=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1000000</span>;i++)&#123;</span><br><span class="line">            Cat cat=<span class="keyword">new</span> Cat();</span><br><span class="line">            cat=<span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;垃圾收集机制发挥作用的次数为： &quot;</span>+num);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span>()throws Throwable</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;这个猫对象被摧毁啦！&quot;</span>);</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看看它的结果<br><img src="/assets/laji.jpg" alt="结果"><br>代码已经覆盖了finalize方法，就是说，每执行一次，会打印出一句“这个猫对象被摧毁啦！”，并且num+1,理论上num应等于1000000才对，但实际上num&#x3D;187462,这意味着垃圾收集机制只执行了187462次。事实告诉我们这个东西并不可靠。</p>
-<h4 id="4-怎么做？"><a href="#4-怎么做？" class="headerlink" title="4.怎么做？"></a>4.怎么做？</h4><p>不要依赖 finalize()释放关键资源的方法。 JVM 可能会调用它，也可能不会。垃圾回收器仅仅能做的是尽可能保证可用内存的使用效率，让可用内存得到高效的管理。程序员可以影响垃圾回收的执行，但不能控制。但当对象在其处于活动状态时拥有一些性能关键资源（例如，打开的数据库连接），则最好创建并显式调用特殊方法以在不再需要该对象时释放它们，以免造成内存泄漏。</p>
-<ol>
-<li>将无用对象设置为null；</li>
-<li>System.gc();<br>虽然可以通过System.gc()来强制回收垃圾，但是这个命令下达后无法保证JVM会立即响应执行，但经验表明，下达命令后，会在短期内执行你的请求。</li>
-</ol>
 
                 
             </div>
@@ -519,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sakuraywy.github.io/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/">https://sakuraywy.github.io/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/</a>
+                    <a href="https://sakuraywy.github.io/2022/07/04/qiu-su-shu-fang-fa/">https://sakuraywy.github.io/2022/07/04/qiu-su-shu-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,8 +555,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">java语法</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">算法入门</span>
                                 </a>
                             
                         </div>
@@ -579,132 +577,6 @@
 
                 </div>
             </div>
-            
-                <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-
             
         </div>
     </div>
@@ -732,62 +604,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2022/07/07/java%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E6%9C%BA%E5%88%B6/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="java的垃圾收集机制">
-                        
-                        <span class="card-title">java的垃圾收集机制</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">java语法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/07/%E6%80%8E%E6%A0%B7%E6%B8%85%E9%99%A4%E8%AE%A8%E5%8E%8C%E7%9A%84%E6%89%8B%E6%9C%BA%E6%A8%A1%E6%8B%9F%E5%A4%A7%E5%B8%88%EF%BC%9F/">
+                <a href="/2022/07/07/zen-yang-qing-chu-tao-yan-de-shou-ji-mo-ni-da-shi/">
                     <div class="card-image">
                         
                         
@@ -803,9 +624,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -827,6 +648,55 @@
                     
                     <a href="/tags/%E5%BF%83%E6%83%85%E6%97%A5%E8%AE%B0/">
                         <span class="chip bg-color">心情日记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/03/markdown-yu-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="MarkDown语法">
+                        
+                        <span class="card-title">MarkDown语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/" class="post-category">
+                                    博客入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">博客入门</span>
                     </a>
                     
                 </div>
@@ -986,11 +856,11 @@
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="8524692679"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
@@ -1012,7 +882,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2022</span>
             
             <a href="/about" target="_blank">杨宛荧</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1043,13 +913,13 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/sakuraYWY" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1084126002@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1059,7 +929,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1084126002" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1084126002" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1068,10 +938,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
