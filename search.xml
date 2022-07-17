@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Dev C++的下载、安装和使用</title>
+      <link href="/2022/07/17/dev-c-de-xia-zai-an-zhuang-he-shi-yong/"/>
+      <url>/2022/07/17/dev-c-de-xia-zai-an-zhuang-he-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<p></font><font color=#008000>（如有任何问题，欢迎评论区留言，或直接联系作者）</font><br>教程参考网址<br><a href="https://www.bilibili.com/video/BV13b411h7st?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=be8cd0f74e8c584396dd0d3cbd8fb8cd">bilibili5分钟教程</a></p><h3 id="1-软件介绍及下载地址"><a href="#1-软件介绍及下载地址" class="headerlink" title="1. 软件介绍及下载地址"></a>1. 软件介绍及下载地址</h3><p>Dev-C++（或者叫做 Dev-Cpp）是 Windows 环境下的一个轻量级 C&#x2F;C++ 集成开发环境（IDE）。</p><p><a href="https://pan.baidu.com/s/1GMPgMSzScWL16p9MxNkU7g?pwd=t2ne">百度网盘下载地址</a><br><img src="/assets/%EF%BC%88dev%EF%BC%891.jpg" alt="下载"><br>（会有些慢，耐心等待一会儿，心急吃不了热豆腐）</p><p>(或者下面这个，不过太慢了<strong>不推荐</strong>)<br><a href="sourceforge.net/projects/orwelldevcpp/">下载网址</a></p><h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p><img src="/assets/%EF%BC%88dev%EF%BC%892.jpg" alt="下载完成界面"><br><img src="/assets/%EF%BC%88dev%EF%BC%893.jpg" alt="安装它"><br><img src="/assets/%EF%BC%88dev%EF%BC%894.jpg" alt="语言默认英语"><br><img src="/assets/%EF%BC%88dev%EF%BC%895.jpg" alt="默认选项就可以了"><br><img src="/assets/%EF%BC%88dev%EF%BC%896.jpg" alt="默认安装在C盘"><br><img src="/assets/%EF%BC%88dev%EF%BC%897.jpg" alt="默默等它安装完成再点finish就ok啦"></p><h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h3><p><img src="/assets/%EF%BC%88dev%EF%BC%898.jpg" alt="新建项目"><br>打开Dev-C++,按照图中新建一个项目<br><img src="/assets/%EF%BC%88dev%EF%BC%899.jpg" alt="新建一个C语言项目"></p><p><img src="/assets/%EF%BC%88dev%EF%BC%8911.jpg" alt="写一个最简单的代码"></p><p><img src="/assets/%EF%BC%88dev%EF%BC%8912.jpg" alt="编译运行它"><br>直接按下F11键也可以</p><p><img src="/assets/%EF%BC%88dev%EF%BC%8913.jpg" alt="给你的源代码一个存放的位置"><br>比如我就放在桌面</p><p><img src="/assets/%EF%BC%88dev%EF%BC%8914.jpg" alt="运行结果"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速排序</title>
+      <link href="/2022/07/15/kuai-su-pai-xu/"/>
+      <url>/2022/07/15/kuai-su-pai-xu/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif" alt="快速排序"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>英语语法</title>
       <link href="/2022/07/08/xiao-sheng-chu-ying-yu/"/>
       <url>/2022/07/08/xiao-sheng-chu-ying-yu/</url>
