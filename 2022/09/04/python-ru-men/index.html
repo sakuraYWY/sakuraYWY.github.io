@@ -457,14 +457,14 @@ python的BIF（内置函数）1dir(__builtins__)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-04
+                    2022-09-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    177
+                    645
                 </div>
                 
 
@@ -490,6 +490,28 @@ python的BIF（内置函数）1dir(__builtins__)
 <li>跨越多行的字符串，需要用到三重引号字符串<br>例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>=<span class="string">&quot;&quot;&quot;床前明月光</span></span><br><span class="line"><span class="string">疑是地上霜</span></span><br><span class="line"><span class="string">举头望明月</span></span><br><span class="line"><span class="string">低头思故乡</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
 <li>and逻辑操作符</li>
 <li>rand模块：引入随机数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">secret=random.randint(<span class="number">1</span>,<span class="number">10</span>)<span class="comment">#生成1到10之间的随机整数</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h4><ol>
+<li><p>猜数字游戏</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">secret=random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">temp=<span class="built_in">input</span>(<span class="string">&quot;猜猜我想的是哪个数字&quot;</span>)</span><br><span class="line">guess=<span class="built_in">int</span>(temp)</span><br><span class="line"><span class="keyword">while</span> guess!=secret:</span><br><span class="line">    <span class="keyword">if</span> guess&gt;secret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;大了大了&quot;</span>)</span><br><span class="line">        temp=<span class="built_in">input</span>(<span class="string">&quot;再猜猜是哪个数字吧&quot;</span>)</span><br><span class="line">        guess=<span class="built_in">int</span>(temp)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> guess&lt;secret:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;小了小了&quot;</span>)</span><br><span class="line">            temp=<span class="built_in">input</span>(<span class="string">&quot;在猜猜是哪个数字吧&quot;</span>)</span><br><span class="line">            guess=<span class="built_in">int</span>(temp)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;恭喜你，猜对了！游戏结束&quot;</span>) </span><br></pre></td></tr></table></figure></li>
+<li><p>&#x2F;&#x2F;:整除<br>&#x2F;：有小数的除法<br>**：幂</p>
+</li>
+<li><p>逻辑操作符：and，or，not</p>
+</li>
+<li><p>优先级问题：<br><img src="/assets/python1.jpg" alt="优先级问题"></p>
+</li>
+<li><p>打飞机框架：<br>加载背景音乐<br>播放背景音乐<br>我方飞机出现<br>间隔&#x3D;0</p>
+</li>
+</ol>
+<p>while ture：<br>  if 用户点击了关闭按钮：<br>     退出程序</p>
+<p>间隔+&#x3D;1<br>if 间隔&#x3D;&#x3D;50：<br>间隔&#x3D;1<br>小飞机出现，<br>小飞机移动一个位置，<br>屏幕刷新</p>
+<p>if 用户鼠标产生移动：<br> 我方飞机中心位置&#x3D;用户鼠标位置<br> 屏幕刷新</p>
+<p> if 我方飞机与小飞机发生碰撞：<br> 我方挂，播放坠机音乐<br> 修改我方飞机图案<br> 打印“game over”<br> 停止背景音乐，最好淡出</p>
+<ol start="6">
+<li>elif: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> score=<span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入你的分数！&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> <span class="number">90</span>&lt;=score&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;A&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">80</span>&lt;=score&lt;<span class="number">90</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;B&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">70</span>&lt;=score&lt;<span class="number">80</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;C&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">60</span>&lt;=score&lt;<span class="number">70</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;D&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;输入错误！&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>三元操作符语法：<br>x if 条件 else y</li>
+<li>断言（assert）：当这个关键字后面的条件为假的时候，程序自动崩溃并抛出AssertionError的异常。可以用它在程序中置入检查点，当需要确保程序中的某一条件一定为真时才能让程序正常工作的话，assert关键字就非常有用了。<br>例如：assert 3&gt;4</li>
+<li>for循环：<br>for 变量 in 表达式：<br>  循环体<br>例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr=<span class="string">&quot;糯米爱草莓&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">    <span class="built_in">print</span>(i,end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
 
                 
