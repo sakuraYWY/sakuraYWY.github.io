@@ -453,14 +453,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-25
+                    2022-10-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.3k
                 </div>
                 
 
@@ -1103,6 +1103,51 @@
 <li>可以按照需求省略</li>
 <li>特殊情况：在pc端，若盒子大小和背景图片大小一样，可以直接写background: url()</li>
 </ul>
+<h4 id="导航制作"><a href="#导航制作" class="headerlink" title="导航制作"></a>导航制作</h4><p>布局顺序：</p>
+<ol>
+<li>从外到内，从上到下<br>每一个盒子的样式</li>
+<li>宽高</li>
+<li>辅助的背景颜色</li>
+<li>盒子的模型部分：boder、padding、margin</li>
+<li>其他样式：color、font—、text……</li>
+</ol>
+<h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h4><p><strong>行内块</strong><br>display：inline-block;<br>若代码换行，会产生空格间距</p>
+<div></div><div></div>
+
+<p>作用：网页布局<br>特点：脱离标准流，可以覆盖标准流里的元素，下一个浮动会浮动在上一个浮动左右，浮动标签是顶对齐的<br>margin-top：50px可以使之下来</p>
+<p><strong>css书写顺序</strong></p>
+<ol>
+<li>浮动&#x2F;display</li>
+<li>盒子模型：margin、border、padding、宽度、高度、背景色</li>
+<li>文字样式</li>
+</ol>
+<h2 id="web开发进阶"><a href="#web开发进阶" class="headerlink" title="web开发进阶"></a>web开发进阶</h2><h4 id="平面转换-x2F-2D转换"><a href="#平面转换-x2F-2D转换" class="headerlink" title="平面转换&#x2F;2D转换"></a>平面转换&#x2F;2D转换</h4><p>位移<br>旋转<br>缩放<br><strong>语法</strong></p>
+<ol>
+<li>位移<br>transform:translate(水平移动距离，垂直移动距离)<br>快捷键：tf<br>取值：正负均可，</li>
+</ol>
+<ul>
+<li>像素单位数值</li>
+<li>百分比（参考盒子）<blockquote>
+<p>技巧：1.translate()如果只给出一个值，表示X轴方向移动的距离<br> 2. 单独设置某个方向的移动距离：translateX()&amp;translateY()</p>
+</blockquote>
+</li>
+</ul>
+<p>.box li:hover{<br>  transform: translate(30px);&#x2F;<em>只水平移动</em>&#x2F;<br>  transform: translateY(30px);<br>}</p>
+<h4 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h4><p><strong>语法</strong><br>transform：scale(x轴缩放倍数，y轴缩放倍数)</p>
+<blockquote>
+<p>一般只取一个值等比例缩放<br>transform：scale(缩放倍数);<br>缩放倍数大于1放大，小于1缩小</p>
+</blockquote>
+<h4 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h4><p><strong>语法</strong><br>background-image:linear-gradient{<br>颜色1，<br>颜色2<br>};</p>
+<p><strong>半透明渐变</strong></p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p><strong>定义动画</strong></p>
+<blockquote>
+<p>两个状态<br>@keyframes 动画名称{<br>  from{}<br>  to{}<br> }</p>
+</blockquote>
+<p> 或</p>
+<blockquote>
+<p>多个状态<br>  @keyframes 动画名称{<br>  0%{}<br>  10%{}<br>  15%{}<br>  100%{}<br> }</p>
+</blockquote>
+<p> <strong>使用动画</strong><br> animation: 动画名称 动画花费时长;</p>
 
                 
             </div>
@@ -1479,18 +1524,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/15/ge-ren-wang-ye-de-kai-fa/">
+                <a href="/2022/10/28/java-script/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="个人网页的开发">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java Script">
                         
-                        <span class="card-title">个人网页的开发</span>
+                        <span class="card-title">Java Script</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1500,9 +1544,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1511,7 +1555,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

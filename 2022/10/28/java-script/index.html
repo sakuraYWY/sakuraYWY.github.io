@@ -4,8 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ps入门, 仙女秘境">
-    <meta name="description" content="常见颜色模式：1.HSB模式：色相&amp;#x2F;色调、饱和度、亮度             2. RGB模式：             3.CMYK模式：用于印刷，代表青色、洋红、黄色、黑色             4.Lab模式：由亮度分量">
+    <meta name="keywords" content="Java Script, 仙女秘境">
+    <meta name="description" content="初始运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。
+作用
+表单动态校验(JS产生的最初目的)
+网页特效
+服务端开发(Node.js)
+桌面程序
+A">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +25,7 @@
 
     
 
-    <title>ps入门 | 仙女秘境</title>
+    <title>Java Script | 仙女秘境</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ps入门</h1>
+                    <h1 class="description center-align post-title">Java Script</h1>
                 </div>
             </div>
         </div>
@@ -442,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-06
+                    2022-10-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-06
+                    2022-10-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    461
                 </div>
                 
 
@@ -473,85 +479,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>常见颜色模式：1.HSB模式：色相&#x2F;色调、饱和度、亮度<br>             2. RGB模式：<br>             3.CMYK模式：用于印刷，代表青色、洋红、黄色、黑色<br>             4.Lab模式：由亮度分量（L）和a、b两个色度分量组成，具有最宽的色域<br>位图模式：只用黑白两种颜色表示<br>双色调模式：两种油墨来打印灰度图<br>索引颜色模式：只能表现256钟颜色，常用于网页和多媒体的制作<br>多通道模式：</p>
-<p><strong>行业软件介绍</strong></p>
-<table>
+                <h2 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h2><p>运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
+<li>表单动态校验(JS产生的最初目的)</li>
+<li>网页特效</li>
+<li>服务端开发(Node.js)</li>
+<li>桌面程序</li>
+<li>App(Cordova)</li>
+<li>控制硬件-物联网</li>
+<li>游戏开发(cocos2d-js)</li>
+</ol>
+<h4 id="html和css和js的关系"><a href="#html和css和js的关系" class="headerlink" title="html和css和js的关系"></a>html和css和js的关系</h4><p>前两个是描述语言，后者是编程类语言</p>
+<h4 id="浏览器执行JS"><a href="#浏览器执行JS" class="headerlink" title="浏览器执行JS"></a>浏览器执行JS</h4><p>浏览器组成：</p>
+<ol>
+<li>渲染引擎：用来解析html和css，俗称内核</li>
+<li>JS引擎：也叫JS解释器，用来读取网页中的javaScript代码，对其处理后运行。</li>
+</ol>
+<h4 id="JS组成"><a href="#JS组成" class="headerlink" title="JS组成"></a>JS组成</h4><ol>
+<li>ECMAScript：javascript语法<br>API:</li>
+<li>DOM：页面文档对象模型,对各种元素进行操作</li>
+<li>BOM：浏览器对象模型，提供了独立于内容、可以与浏览窗口进行互动的对象结构，可以操作浏览器窗口，比如弹出框，控制浏览器跳转、获取分辨率等。</li>
+</ol>
+<h4 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h4><ol>
+<li>行内式：直接写到元素的内部(在body里面写)<br>&lt;\input type&#x3D;”button” value&#x3D;”唐伯虎” onclick&#x3D;”alert(‘点秋香’)”&gt;</li>
+<li>内嵌式：在head里面写</li>
+<li>外部式：<script src="myjs.js"></script></li>
+</ol>
+<p>注意：js中用单引号写文本内容<br>两个script标签内不能写内容</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ol>
+<li>单行&#x2F;&#x2F; ctrl+&#x2F;</li>
+<li>多行&#x2F;**&#x2F; shift+alt+a</li>
+</ol>
+<h4 id="输入输出语句"><a href="#输入输出语句" class="headerlink" title="输入输出语句"></a>输入输出语句</h4><table>
 <thead>
 <tr>
-<th>PS</th>
-<th>AI</th>
-<th>ID</th>
+<th>方法</th>
+<th>说明</th>
+<th>归属</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>位图处理，图片会失真，色彩表现力好，文件大</td>
-<td>矢量图处理，图片不失真，文件小</td>
-<td>专业书籍排版软件</td>
+<td>alert(msg)</td>
+<td>浏览器弹出警示框</td>
+<td>浏览器</td>
 </tr>
 <tr>
-<td>影视后期制作<br>效果图后期处理图像合成<br>电影海报<br>电商<br>网页设计<br>UI设计</td>
-<td>印刷名片<br>包装盒设计制作<br>企业VI手册设计（企业形象识别系统）<br>logo设计</td>
-<td>杂志<br>广告设计<br>目录<br>零售商设计工作室和报纸出版方案等</td>
+<td>console.log(msg)</td>
+<td>浏览器控制台打印输出信息</td>
+<td>浏览器</td>
 </tr>
-</tbody></table>
-<p><strong>ps基本操作</strong></p>
-<table>
-<thead>
 <tr>
-<th>新建画布</th>
-<th>分辨率和颜色</th>
-<th>文件的打开</th>
-<th>置入</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ctrl+N</td>
-<td>印刷输出：300分辨率，CMYK颜色模式<br>电子屏幕显示：72分辨率，RGB颜色模式</td>
-<td>ctrl+O,拖拽到属性栏或菜单栏打开，双击空白工作区打开文件</td>
-<td>拖拽到画布中，右键置入命令，或直接enter键确定</td>
+<td>prompt(info)</td>
+<td>浏览器弹出输入框</td>
+<td>浏览器</td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>文件打开是拖进工作区外，会新建一个画布中；置入是拖入工作区，不会新建画布，但可以在同一个画布放入多个素材，有定界框，enter键或对勾√可以去除；二者都可多选。<br> 若图片不能拖入ps，则可以用2345看图王存一遍图片就可以</p>
-</blockquote>
-<p><strong>图片类型</strong></p>
-<table>
-<thead>
-<tr>
-<th>文件类型</th>
-<th>文件的保存方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>psd:源文件格式可再次修改<br>jpg：图片格式，不可修改<br>png：背景透明，免抠图</td>
-<td>快捷键：ctrl+s<br>另存为快捷键：ctrl+shift+s<br>存储为web所用格式：快捷键ctrl+shift+alt+S</td>
-</tr>
-</tbody></table>
-<p>首选项快捷键:ctrl+k<br>若文件太大不能上传，则可以点文件——》导出——》存储为web所用格式</p>
-<p><strong>制作桌面</strong><br>图像——&gt;图像大小，按下alt键取消就会变成复位，重定图像像素<br>先查看电脑分辨率1600<em>900，然后ctrl+N新建1600</em>900，重定图像像素1600*900，ctrl+E合并图层，ctrl+s存储<br> 颜色替换工具</p>
-<p> 自由变换：ctrl+T,回车键确定旋转，绕中心锚点旋转<br> 斜切：光标放在边界中间shift+CTRL键<br> 扭曲：光标放在四个点，按下ctrl键<br> 投影透视：shift+ctrl+alt</p>
-<p> 编辑，变换，再次，shift+ctrl+T(+ALT)复制图层<br> 选中全部副本图层，ctrl+E合并图层</p>
-<p> 蒙版实现渐变效果，蒙版用来控制图层的显示，黑色隐藏，白色展现（渐变工具）<br> 移到值杯底和边缘，右键变形，拖动锚点（尽量一次完成），柔光模式，，蒙版画笔工具，调节流量和不透明度</p>
-<p> <strong>选择工具</strong><br> 快速蒙版选择法<br> 选择-&gt;反向<br> 图像，调整，反相</p>
-<p> 移动正圆：椭圆工具，shift+空格键</p>
-<p> 从圆心开始延申画圆：shift+alt<br> 编辑，拷贝，打开目标文件，编辑，粘贴<br> 图层，图层样式，投影<br> alt键拖动即复制<br> 磁性套索<br> 复制图层，矩形，多边形索讨工具，shift键垂直，出现小圈圈表示连到一起了<br> ctrl+J<br> 创建剪贴模板：图层alt+CTRL+J</p>
-<p> <strong>魔棒工具</strong><br> 调整容差，越小可以选到的背景越精确<br> 图层混合模式，正片叠底<br><strong>快速选择工具</strong><br>拖动鼠标时选区会向外扩展<br>Alt键变为逻辑减<br>移动工具拖拽<br><strong>色彩范围命令</strong><br>选择，色彩范围，本地化色彩蹙，逻辑加。选中为白色<br><strong>内容识别比例</strong><br>alt键双击背景图层，变为普通图层<br>编辑，内容识别比例<br>保护肤色<br>裁剪工具。<br><strong>保护aha通道</strong><br>选择工具选中，右键储存选区，通道里就出现Alpha通道。<br><strong>快速蒙版</strong><br>编辑选中的图层<br><strong>调整边缘命令</strong><br>模板工具选中区域，选择，调整边缘，智能半径，抹除调整工具，净化颜色，输出到新建带有图层蒙版的图层，调整羽化半径。<br> 右键，添加蒙版到选区。<br> （一般选头发发梢）<br> <strong>浅景深荷花实例</strong><br> 快速选择，选中前景，反选，将选区转化成通道，选择，修改，羽化，存储为通道，滤镜，模糊，镜头模糊。调整，自然饱和度</p>
-<p> <strong>制作老照片</strong><br> 滤镜，镜头矫正滤镜，晕影-100，中心点+100，确定。<br> 添加杂色：滤镜，杂色，添加杂色，勾选预览。<br> 图层，新建填充图层，H40,S33,<br> T图层模式：颜色<br> 刮擦图片拖过来，图片模式：柔光，降低不透明度<br><strong>去除白云</strong><br> 魔棒，建立选区。建立图层，渐变填充图层，渐变填充，前景色到背景色渐变。色标颜色，饱和度。<br> 新建图层，柔边笔，300大小。<br> alt键选中蒙版复制到太阳图层上。<br> 添加光晕：新建图层，滤色的混合模式，填充屏幕中性色，滤镜，渲染，镜头光晕，移动光晕位置，35毫米聚焦<br> <strong>衣服印花</strong><br> 选区选中，新建图案填充图层，线性加深。<br> 选中图案ctrl+a，编辑，定义图案，图案填充，线性加深<br> 加深颜色ctrol+j</p>
-<p> <strong>蒙版</strong><br> 添加图层蒙版，图层蒙版缩略图，黑色可以遮盖当前图像。<br> 半透明效果，灰色涂抹<br> 添加图层蒙版<br> 椭圆工具<br> 对选区进行羽化30px<br> 再建蒙版</p>
-<p> 17周交ps大作业<br> 篇幅不超过六页，双面打印</p>
-<p> 蒙版，色相饱和度<br> 笔刷<br> 魔棒先选中背景，然后shift+contrl+i反选出瓶子<br> 合并拷贝<br> 在ctrl+V<br> 把风景图拖过来<br> 取名风景<br> 降低图片不透明度<br> 调至合适位置，ctrl+alt+G创建剪贴蒙版<br> 图层 显示蒙版 画笔工具</p>
-<p> 制作倒影<br> 合并拷贝，粘贴<br> 编辑，变换，垂直翻转，按住shift键往下移动<br> 不透明度降低</p>
-<p> 添加图层蒙版，显示全部，渐变工具编辑图层蒙版<br> 线性渐变</p>
-<p> 变大长腿<br> 先选中，移动，ctrl+t拉长</p>
-<p> 编辑，操控变形，让图像矢量化，定锚点</p>
-<p> <strong>相片调整</strong><br> 1.总体不透明度将为50%<br> 2.揉脚橡皮擦<br> <strong>对齐照片</strong><br> 选中图层，编辑，自动对齐图层</p>
-<p> 编辑，合并到HDR,添加打开的文件，尝试自动对齐原图像<br> <strong>拼接照片</strong><br> 文件，自动，photomarch，三个都勾选上</p>
-<p> <strong>滤镜</strong><br> ps中的滤镜是插件模块<br>ps内置的滤镜<br>外挂滤镜</p>
-<p>镜头矫正</p>
-<p>量角器把镜头拉平</p>
-<p>透视变形<br>镜头矫正，垂直透视</p>
-<p>极坐标<br>图像，图像大小，长宽都是600像素，编辑，变换，垂直翻转，滤镜，扭曲，极坐标，变换，垂直翻转</p>
-<p><strong>制作倒影</strong><br>选中实物，ctrl+J,CTRL+T,右键，垂直翻转。按住shift下移，遮住水面。色阶，图像，调整，色阶。中性色右移。输出色阶199.。模糊滤镜，动感模糊，90度，距离，40度，确定</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ol>
+<li>声明 var age;&#x2F;&#x2F;声明一个名称为age的变量<br>var是js的关键字，用来声明变量（varlable变量的意思）。</li>
+<li>赋值：age&#x3D;10;</li>
+<li>输出：console.log(age);</li>
+<li>初始化：var age&#x3D;10;</li>
+<li></li>
+</ol>
 
                 
             </div>
@@ -578,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sakuraywy.github.io/2022/09/06/ps-ru-men/">https://sakuraywy.github.io/2022/09/06/ps-ru-men/</a>
+                    <a href="https://sakuraywy.github.io/2022/10/28/java-script/">https://sakuraywy.github.io/2022/10/28/java-script/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -928,54 +917,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/09/17/duo-mei-ti-ji-zhu-yuan-li/">
+                <a href="/2022/10/28/java-script/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="多媒体技术原理">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java Script">
                         
-                        <span class="card-title">多媒体技术原理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            杨宛荧
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/04/python-ru-men/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python入门">
-                        
-                        <span class="card-title">python入门</span>
+                        <span class="card-title">Java Script</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -986,7 +939,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-28
                             </span>
                         <span class="publish-author">
                             
@@ -996,13 +949,43 @@
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/15/ge-ren-wang-ye-de-kai-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="个人网页的开发">
+                        
+                        <span class="card-title">个人网页的开发</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            杨宛荧
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
