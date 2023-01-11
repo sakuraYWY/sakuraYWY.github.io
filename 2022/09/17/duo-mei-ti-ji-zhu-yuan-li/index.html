@@ -452,14 +452,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-07
+                    2022-12-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    313
+                    782
                 </div>
                 
 
@@ -496,6 +496,17 @@
 <li>png</li>
 </ol>
 <h4 id="视频编码"><a href="#视频编码" class="headerlink" title="视频编码"></a>视频编码</h4><p><img src="/assets/%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81.jpg" alt="视频编码"></p>
+<h2 id="流媒体服务"><a href="#流媒体服务" class="headerlink" title="流媒体服务"></a>流媒体服务</h2><p>边下载边播放DNS解析<br>DNS服务器（<a target="_blank" rel="noopener" href="http://www.com/">www.com</a>)</p>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>时间快，抖动小.大多数情况下是基于这个的,播放时延小。</p>
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>数据可靠，抖动和迟延没有DUP好</p>
+<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>基于CS、TCP的，延迟大.可以通过CDN将数据部署到离用户较近的地方。会用到DASH,自适应调整，因为基于web，所以会根据带宽调整，一般用于做点播任务。</p>
+<h4 id="基于HTTP的动态自适应流-DASH技术"><a href="#基于HTTP的动态自适应流-DASH技术" class="headerlink" title="基于HTTP的动态自适应流 DASH技术"></a>基于HTTP的动态自适应流 DASH技术</h4><h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>内容分发网络，让用户从较近的地方调取资源，流媒体点播业务使用。<br>会有一个DNS服务，来找路径，部署。</p>
+<h4 id="VOICE-OVER-IP"><a href="#VOICE-OVER-IP" class="headerlink" title="VOICE OVER IP"></a>VOICE OVER IP</h4><p>基于IP的J交互式语音交流，延迟不超过150毫秒。大于400毫秒体验就变差。<br>无sever服务参与。更多的是采用UDP.</p>
+<p>语音突发期：编码，存储 64kbps<br>语音静默期：不编码，不存储<br>编码速率：64kbps<br>header+chunk:信封加数据（通常是160bytes）。通常以UDP传。</p>
+<p>网络损失：路由器（数据溢出丢失）<br>延迟损失：要放的时候的数据还没有传输到，这些数据就损失了。典型的是400毫秒</p>
+<p>在损失不超过10%的情况下可以补救。<br>FEC前向纠错<br>simple FEC，每一位都采用一个异或操作，一共发了N+1个chunk<br>自适应PLAYOUT损失：EWMA(指数加权平均，为了计算时延)。针对突发期的每一个数据，通过一个制约关系得到丢失块，所以最多只能丢失一块。</p>
+<p>other FEC scheme：<br>通过前后相邻关系来弥补<br>加一个时间戳信号和一个序号。</p>
+<p>FEC:为了弥补损失，糊弄观众。前向纠错（发送N+1块数据），知道错，还知道错哪。满足异或关系。<br>检错码只知道错，但不知道错哪。</p>
 
                 
             </div>
@@ -1130,7 +1141,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">杨宛荧</a>
            
