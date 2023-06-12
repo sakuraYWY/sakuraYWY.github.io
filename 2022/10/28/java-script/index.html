@@ -5,13 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java Script, 仙女秘境">
-    <meta name="description" content="初始运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。
-作用
-表单动态校验(JS产生的最初目的)
-网页特效
-服务端开发(Node.js)
-桌面程序
-A">
+    <meta name="description" content="初始运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。是一种嵌入到HTML文件中的基于对象和事件驱动并具有安全性的脚本语言。不需要经过编译，直接在运行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -455,14 +449,14 @@ A">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-28
+                    2023-05-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    461
+                    1.4k
                 </div>
                 
 
@@ -479,15 +473,18 @@ A">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h2><p>运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。</p>
+                <h2 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h2><p>运行在客户端的脚本语言，是一门脚本语言，不需要编译，运行过程由js解释器来逐行解释并执行。现在也可以基于Node.js技术进行服务器端编程。<br>是一种嵌入到HTML文件中的<strong>基于对象</strong>和<strong>事件驱动</strong>并具有安全性的脚本语言。<br>不需要经过编译，直接在运行时有浏览器解释执行。<br>安全性：不允许访问本地的硬盘。<br>B&#x2F;S架构：所有的客户端都用浏览器。<br>js主要用于在客户端动态地，与客户交互地完成一些html文件所不能实现的功能<br><strong>对大小写敏感</strong></p>
+<h4 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h4><p>改变html显示文本、图像等内容<br>改变html样式<br>检验用户输入的内容<br>有效地组织网页内容（不同条件下页面内容的显示和隐藏）</p>
 <h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
 <li>表单动态校验(JS产生的最初目的)</li>
-<li>网页特效</li>
+<li>网页特效（监听用户的一些行为让昂也做出对应的反馈）</li>
 <li>服务端开发(Node.js)</li>
 <li>桌面程序</li>
 <li>App(Cordova)</li>
 <li>控制硬件-物联网</li>
 <li>游戏开发(cocos2d-js)</li>
+<li>数据交换（获取后台数据，渲染到前端）</li>
+<li>服务端编程（node.js）</li>
 </ol>
 <h4 id="html和css和js的关系"><a href="#html和css和js的关系" class="headerlink" title="html和css和js的关系"></a>html和css和js的关系</h4><p>前两个是描述语言，后者是编程类语言</p>
 <h4 id="浏览器执行JS"><a href="#浏览器执行JS" class="headerlink" title="浏览器执行JS"></a>浏览器执行JS</h4><p>浏览器组成：</p>
@@ -496,19 +493,24 @@ A">
 <li>JS引擎：也叫JS解释器，用来读取网页中的javaScript代码，对其处理后运行。</li>
 </ol>
 <h4 id="JS组成"><a href="#JS组成" class="headerlink" title="JS组成"></a>JS组成</h4><ol>
-<li>ECMAScript：javascript语法<br>API:</li>
-<li>DOM：页面文档对象模型,对各种元素进行操作</li>
-<li>BOM：浏览器对象模型，提供了独立于内容、可以与浏览窗口进行互动的对象结构，可以操作浏览器窗口，比如弹出框，控制浏览器跳转、获取分辨率等。</li>
+<li>ECMAScript：javascript语法</li>
+<li>Web API:由DOM(网页文档对象模型)和BOM（浏览器对象模型）组成<br> DOM：页面文档对象模型,对各种元素进行操作(移动、大小、添加和删除元素)<br> BOM：浏览器对象模型，提供了独立于内容、可以与浏览窗口进行互动的对象结构，可以操作浏览器窗口，比如弹出框，控制浏览器跳转、获取分辨率等。</li>
 </ol>
 <h4 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h4><ol>
-<li>行内式：直接写到元素的内部(在body里面写)<br>&lt;\input type&#x3D;”button” value&#x3D;”唐伯虎” onclick&#x3D;”alert(‘点秋香’)”&gt;</li>
-<li>内嵌式：在head里面写</li>
-<li>外部式：<script src="myjs.js"></script></li>
+<li><p>行内式：直接写到元素的内部<br>&lt;\input type&#x3D;”button” value&#x3D;”唐伯虎” onclick&#x3D;”alert(‘点秋香’)”&gt;</p>
+</li>
+<li><p>内嵌式：(在body里面写，在</body>的上面)，js要写在html文件底部附近，因为若写在上面，可能会因为html尚未加载而失效</p>
+</li>
+<li><p>外部式：<script src="myjs.js"></script>，两个script标签中间不要写代码，因为会被忽略</p>
+</li>
 </ol>
 <p>注意：js中用单引号写文本内容<br>两个script标签内不能写内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- &lt;script&gt; </span></span><br><span class="line"><span class="comment">    // 弹出警示框（内嵌式）</span></span><br><span class="line"><span class="comment">    alert(&#x27;努力，奋斗!&#x27;);</span></span><br><span class="line"><span class="comment">  &lt;/script&gt;--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">    //外部式</span></span><br><span class="line"><span class="comment">  &lt;script src=&quot;./myjs.js&quot;&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 行内式 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;唐伯虎&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;点秋香&#x27;)&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;嗨！我回来了！&#x27;)&quot;</span> &gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ol>
 <li>单行&#x2F;&#x2F; ctrl+&#x2F;</li>
 <li>多行&#x2F;**&#x2F; shift+alt+a</li>
+<li>js结束可以加分号，或者都不加分号</li>
 </ol>
 <h4 id="输入输出语句"><a href="#输入输出语句" class="headerlink" title="输入输出语句"></a>输入输出语句</h4><table>
 <thead>
@@ -534,13 +536,68 @@ A">
 <td>浏览器</td>
 </tr>
 </tbody></table>
-<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ol>
+<ul>
+<li>输出语法</li>
+</ul>
+<ol>
+<li><p>document.write(‘要输出的内容’)<br>作用：向body内输出内容<br>注意：如果输出的内容写的是标签，也会被解析成网页元素</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"> <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;</span></span></span><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是标签</span></span></span><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#x27;);</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>alert(‘弹出警示框的内容’)；<br> 作用：页面弹出警告对话框</p>
+</li>
+<li><p>console.log(‘控制台打印’)；<br> 作用：控制台输出语法，程序员调试使用（用户看不到）</p>
+</li>
+</ol>
+<ul>
+<li>输入语法</li>
+</ul>
+<ol>
+<li>prompt(‘请输入您的姓名：’)<br> 作用：显示一个对话框，对话框中包含一条文字信息，用来提示用户输入文字。</li>
+</ol>
+<ul>
+<li>JavaScript代码执行顺序<br>1.按html文档流顺序执行javascript代码<br>2.alert()和prompt()它们会跳过页面渲染先被执行</li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li>前任</li>
+</ul>
+<ol>
 <li>声明 var age;&#x2F;&#x2F;声明一个名称为age的变量<br>var是js的关键字，用来声明变量（varlable变量的意思）。</li>
 <li>赋值：age&#x3D;10;</li>
 <li>输出：console.log(age);</li>
 <li>初始化：var age&#x3D;10;</li>
-<li></li>
 </ol>
+<ul>
+<li>现任</li>
+</ul>
+<ol>
+<li>声明<br>语法：let 变量名<br>let age</li>
+<li>赋值<br>age &#x3D; 18</li>
+<li>输出变量<br>alert(‘age’)</li>
+<li>声明的同时赋值<br>let age&#x3D;80</li>
+</ol>
+<ul>
+<li>let、var的区别</li>
+</ul>
+<ol>
+<li><p>作用域不同<br> var是函数作用域（伪全局作用域），而let是块级作用域。在块级作用域内声明的变量无法在块级作用域外面使用</p>
+</li>
+<li><p>let不能在定义之前访问该变量，但是var可以在定义之前访问（let不会预解析）。</p>
+</li>
+<li><p>let不能被重新定义，但是var是可以的</p>
+</li>
+</ol>
+<ul>
+<li><p>更新变量<br>目标赋值后还可以通过简单给它一个不同的值来更新它<br>let age &#x3D; 18<br>age &#x3D; 19</p>
+</li>
+<li><p>不能写成 let age &#x3D; 18<br>    let age &#x3D; 19<br>  let 不允许多次声明一个变量</p>
+</li>
+<li><p>声明多个变量<br>let age &#x3D; 18,uname &#x3D;  ‘哈哈’</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> uname=<span class="title function_">prompt</span>(<span class="string">&#x27;请输入姓名&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">document</span>.<span class="title function_">write</span>(uname)</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="交换变量值"><a href="#交换变量值" class="headerlink" title="交换变量值"></a>交换变量值</h3> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> &gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> num1 = <span class="number">20</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> num2 = <span class="number">10</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> temp</span></span><br><span class="line"><span class="language-javascript">      temp = num1</span></span><br><span class="line"><span class="language-javascript">      num1 = num2</span></span><br><span class="line"><span class="language-javascript">      num2 = temp</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;num1的值为&#x27;</span>+num1)</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;num2的值为&#x27;</span>+num2)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="变量的本质"><a href="#变量的本质" class="headerlink" title="变量的本质"></a>变量的本质</h3><p> 是程序在内存中申请的一块用来存放数据的小空间</p>
 
                 
             </div>

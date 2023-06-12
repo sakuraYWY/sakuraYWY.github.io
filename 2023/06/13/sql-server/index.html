@@ -1,0 +1,1668 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SQL server, 仙女秘境">
+    <meta name="description" content="SQL SERVER介绍数据库：数据库是“按照数据结构来组织、存储和管理数据的仓库”。是一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。
+应用场景：在软件系统中无处不在，几乎所有的软件系统背后都有数据库，例如（淘宝，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>SQL server | 仙女秘境</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">仙女秘境</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">仙女秘境</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SQL server</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-06-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-06-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="SQL-SERVER介绍"><a href="#SQL-SERVER介绍" class="headerlink" title="SQL SERVER介绍"></a>SQL SERVER介绍</h1><p><strong>数据库：</strong>数据库是“按照数据结构来组织、存储和管理数据的仓库”。是一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。</p>
+<p><strong>应用场景：</strong>在软件系统中无处不在，几乎所有的软件系统背后都有数据库，例如（淘宝，QQ，游戏等）。</p>
+<p><strong>数据表展现形式：</strong> （二维表）</p>
+<p><img src="/img%5C001.PNG" alt="001"></p>
+<p><strong>主流关系型数据库：</strong> SQL SERVER，MySQL，Oracle等。</p>
+<p><strong>数据库的安装：</strong></p>
+<p>（1）百度搜索”I tell you”，或者访问 <a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
+<p>（2）选择合适的版本，下载安装。</p>
+<p><img src="/img%5C002.PNG" alt="002"></p>
+<p><strong>打开数据库：</strong></p>
+<p>（1）启动服务：</p>
+<p>​   【1】命令行启动；【2】SQL SERVER配置管理器；【3】Windows服务；</p>
+<p>（2）打开SQL SERVER Management Studio，使用工具连接到数据库。</p>
+<p>​   【1】Windows身份验证； 【2】SQL SERVER身份验证；</p>
+<p> <strong>数据库基本操作：</strong></p>
+<p>（1）建库。</p>
+<p>（2）建表。</p>
+<p>（3）数据维护。</p>
+<p><strong>数据库的迁移：</strong></p>
+<p>（1）数据库的分离、附加；（分离和删除的区别在于硬盘上是否还留存有数据库文件）</p>
+<p>（2）数据库的备份，还原；</p>
+<p>（3）数据库脚本的保存；</p>
+<h1 id="建库建表"><a href="#建库建表" class="headerlink" title="建库建表"></a>建库建表</h1><h2 id="一、检查数据库名是否存在"><a href="#一、检查数据库名是否存在" class="headerlink" title="一、检查数据库名是否存在"></a>一、检查数据库名是否存在</h2><p>如果需要创建数据库，可能会出现数据库名字重名的现象，我们可以使用如下代码查询数据库名是否存在，存在则删除此数据库。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--删除数据库</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span>(<span class="keyword">select</span> * <span class="keyword">from</span> sys.databases <span class="keyword">where</span> <span class="type">name</span> = <span class="string">&#x27;DBTEST&#x27;</span>)</span><br><span class="line">    <span class="keyword">drop</span> <span class="keyword">database</span> DBTEST</span><br></pre></td></tr></table></figure>
+<p>此代码检查数据库中是否存在”DBTEST”数据库，如果存在则删除此数据库，此处理方式最好只在学习阶段使用，在正式生产环境中慎用，操作不当可能会删除重要数据。</p>
+<h2 id="二、创建数据库"><a href="#二、创建数据库" class="headerlink" title="二、创建数据库"></a>二、创建数据库</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> DBTEST</span><br><span class="line"><span class="keyword">on</span>  <span class="comment">--数据文件</span></span><br><span class="line">(</span><br><span class="line">    <span class="type">name</span> = <span class="string">&#x27;DBTEST&#x27;</span>,   <span class="comment">--逻辑名称</span></span><br><span class="line">    filename = <span class="string">&#x27;D:\Data\DBTEST.mdf&#x27;</span>,  <span class="comment">--物理路径及名称</span></span><br><span class="line">    size = <span class="number">5</span>MB,  <span class="comment">--数据文件初始大小</span></span><br><span class="line">    filegrowth = <span class="number">2</span>MB <span class="comment">--数据文件增长速度,也可以使用百分比来设置</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">log</span> <span class="keyword">on</span>  <span class="comment">--日志文件</span></span><br><span class="line">(</span><br><span class="line">    <span class="type">name</span> = <span class="string">&#x27;DBTEST_log&#x27;</span>, <span class="comment">--逻辑名称</span></span><br><span class="line">    filename = <span class="string">&#x27;D:\Data\DBTEST_log.ldf&#x27;</span>, <span class="comment">--物理路径及名称</span></span><br><span class="line">    size = <span class="number">5</span>MB, <span class="comment">--日志文件初始大小</span></span><br><span class="line">    filegrowth = <span class="number">2</span>MB <span class="comment">--日志文件增长速度,也可以使用百分比来设置</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>以上代码创建”DBTEST”数据库，并且分别使用on和log on规定了数据文件和日志文件的信息。</p>
+<p>创建数据库也可以按照如下简单语法来创建：</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> DBTEST</span><br></pre></td></tr></table></figure>
+<p>如果按照上述方式创建数据库，数据库的数据文件和日志文件的相关信息，全部采取默认值。</p>
+<h2 id="三、建表"><a href="#三、建表" class="headerlink" title="三、建表"></a>三、建表</h2><p><strong>使用数据库和删除数据表：</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use DBTEST  <span class="comment">--切换当前数据库为DBTEST</span></span><br><span class="line"><span class="comment">--删除表(先判断表在当前数据库是否存在,存在则删除,其中type=&#x27;U&#x27;判断对象类型为用户定义表类型)</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span>(<span class="keyword">select</span> * <span class="keyword">from</span> sys.objects <span class="keyword">where</span> <span class="type">name</span> = <span class="string">&#x27;Department&#x27;</span> <span class="keyword">and</span> <span class="keyword">type</span> = <span class="string">&#x27;U&#x27;</span>)</span><br><span class="line">    <span class="keyword">drop</span> <span class="keyword">table</span> Department</span><br></pre></td></tr></table></figure>
+<p><strong>创建数据表语法：</strong></p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table 表名</span><br><span class="line"><span class="comment">(</span></span><br><span class="line"><span class="comment">    字段名1 数据类型(长度)</span>,</span><br><span class="line">    字段名<span class="number">2</span> 数据类型<span class="comment">(长度)</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>其中数据类型，我们在后面用到什么类型，在介绍什么类型，有的类型可以不填写长度。</p>
+<p><strong>创建数据表示例（部门表，职级表，员工信息表）：</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建部门表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Department -</span><br><span class="line">(</span><br><span class="line">    <span class="comment">--创建部门编号;int代表整数类型;primary key代表主键;identity(1,1)代表从1开始步长为1自增长;</span></span><br><span class="line">    DepartmentId <span class="type">int</span> <span class="keyword">primary key</span> <span class="keyword">identity</span>(<span class="number">1</span>,<span class="number">1</span>),</span><br><span class="line">    <span class="comment">--创建部门名称;nvarchar(50)代表长度50的字符串;not null代表不能为空;</span></span><br><span class="line">    DepartmentName nvarchar(<span class="number">50</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    <span class="comment">--创建部门描述；text代表长文本;</span></span><br><span class="line">    DepartmentRemark <span class="type">text</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>字符串类型比较：</strong></p>
+<p>char：定长，例如 char(10)，不论你存储的数据是否达到了10个字节，都要占去10个字节的空间 。</p>
+<p>varchar：变长，例如varchar(10)，并不代表一定占用10个字节，而代表最多占用10个字节。最大长度8000，也可以使用varchar(max)表示2G以内的数据，但存储机制会和text一样，效率会降低。</p>
+<p>text：长文本， 最大长度为2^31-1(2,147,483,647)个字符 。</p>
+<p>nchar,nvarchar,ntext：名字前面多了一个n， 它表示存储的是Unicode数据类型的字符，区别varchar(100)可以存储100个英文字母或者50个汉字，而nvarchar(100)可以存储100个英文字母，也可以存储100个汉字。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建职级表，rank为系统关键字，此处使用[]代表自定义名字，而非系统关键字</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> [Rank]</span><br><span class="line">(</span><br><span class="line">    RankId <span class="type">int</span> <span class="keyword">primary key</span> <span class="keyword">identity</span>(<span class="number">1</span>,<span class="number">1</span>),</span><br><span class="line">    RankName nvarchar(<span class="number">50</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    RankRemark <span class="type">text</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建员工信息表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> People</span><br><span class="line">(</span><br><span class="line">    PeopleId <span class="type">int</span> <span class="keyword">primary</span> key <span class="keyword">identity</span>(<span class="number">1</span>,<span class="number">1</span>),</span><br><span class="line">    <span class="comment">--references代表外键引用,此字段必须符合与其它表的外键约束</span></span><br><span class="line">    DepartmentId <span class="type">int</span> <span class="keyword">references</span> Department(DepartmentId)  <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    RankId <span class="type">int</span> <span class="keyword">references</span> [Rank](RankId) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    PeopleName nvarchar(<span class="number">50</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    <span class="comment">--default代表字段默认值; check可以规定字段值的约束条件;</span></span><br><span class="line">    PeopleSex nvarchar(<span class="number">1</span>) <span class="keyword">default</span>(<span class="string">&#x27;男&#x27;</span>) <span class="keyword">check</span>(PeopleSex<span class="operator">=</span><span class="string">&#x27;男&#x27;</span> <span class="keyword">or</span> PeopleSex<span class="operator">=</span><span class="string">&#x27;女&#x27;</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    PeopleBirth datetime <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    PeopleSalary <span class="type">decimal</span>(<span class="number">12</span>,<span class="number">2</span>) <span class="keyword">check</span>(PeopleSalary<span class="operator">&gt;=</span> <span class="number">1000</span> <span class="keyword">and</span> PeopleSalary <span class="operator">&lt;=</span> <span class="number">100000</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    <span class="comment">--unique代表唯一约束，为数据提供唯一性保证;</span></span><br><span class="line">    PeoplePhone nvarchar(<span class="number">20</span>) <span class="keyword">unique</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    PeopleAddress nvarchar(<span class="number">100</span>),</span><br><span class="line">    <span class="comment">--datetime和smalldatetime都可以表示时间类型，getdate()用于获取系统当前时间</span></span><br><span class="line">    PeopleAddTime smalldatetime <span class="keyword">default</span>(getdate())</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="四、修改表结构"><a href="#四、修改表结构" class="headerlink" title="四、修改表结构"></a>四、修改表结构</h1><p> （1）如需在表中添加列，请使用下面的语法: </p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="built_in">table_name</span></span><br><span class="line"><span class="keyword">ADD</span> <span class="built_in">column_name</span> datatype</span><br></pre></td></tr></table></figure>
+<p>例如该员工表添加一列员工邮箱：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> People</span><br><span class="line"><span class="keyword">add</span> PeopleMail nvarchar(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<p>（2）如需在表中删除列，请使用下面的语法: </p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="built_in">table_name</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> <span class="built_in">column_name</span></span><br></pre></td></tr></table></figure>
+<p>例如删除员工表中的邮箱这一列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> People</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">column</span> PeopleMail</span><br></pre></td></tr></table></figure>
+<p>（3）如需改变表中列的数据类型，请使用下列语法：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="built_in">table_name</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> <span class="built_in">column_name</span> datatype</span><br></pre></td></tr></table></figure>
+<p>例如需要改变邮箱列的数据类型为varchar(100)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> People</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">column</span> PeopleMail <span class="type">varchar</span>(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="五、删除添加约束"><a href="#五、删除添加约束" class="headerlink" title="五、删除添加约束"></a>五、删除添加约束</h2><p>删除约束语法：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">exists</span>(<span class="keyword">select</span> * <span class="keyword">from</span> sysobjects <span class="keyword">where</span> <span class="type">name</span>=约束名)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">constraint</span> 约束名;</span><br><span class="line">go</span><br></pre></td></tr></table></figure>
+<p>添加约束语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--添加主键约束</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 约束名称 <span class="keyword">primary</span> key(列名)</span><br><span class="line"><span class="comment">--添加check约束</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 约束名称 <span class="keyword">check</span>(条件表达式)</span><br><span class="line"><span class="comment">--添加unique约束</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 约束名称 <span class="keyword">unique</span>(列名)</span><br><span class="line"><span class="comment">--添加default约束</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 约束名称 <span class="keyword">default</span> 默认值 <span class="keyword">for</span> 列名</span><br><span class="line"><span class="comment">--添加外键约束</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 约束名称 <span class="keyword">foreign</span> key (列名) <span class="keyword">references</span> 关联表名(关联表列名)</span><br></pre></td></tr></table></figure>
+
+<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><h2 id="一、向部门表插入数据"><a href="#一、向部门表插入数据" class="headerlink" title="一、向部门表插入数据"></a>一、向部门表插入数据</h2><p><strong>标准语法：</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">insert into <span class="built_in">Department</span>(DepartmentName,DepartmentRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;软件部&#x27;</span>,<span class="string">&#x27;......&#x27;</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Department</span>(DepartmentName,DepartmentRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;硬件部&#x27;</span>,<span class="string">&#x27;......&#x27;</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Department</span>(DepartmentName,DepartmentRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;市场部&#x27;</span>,<span class="string">&#x27;......&#x27;</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>简写语法：（省略字段名称）</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Department <span class="keyword">values</span>(<span class="string">&#x27;行政部&#x27;</span>,<span class="string">&#x27;公司主管行政工作的部门&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>此写法在给字段赋值的时候，必须保证顺序和数据表结构中字段顺序完全一致，不推荐使用此种写法，因为数据表结构变化的时候，数据会出错或产生错误数据。</p>
+<p><strong>一次插入多行数据:</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Department(DepartmentName,DepartmentRemark)</span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;市场部&#x27;</span>,<span class="string">&#x27;吹牛的部门&#x27;</span> <span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;产品部&#x27;</span>,<span class="string">&#x27;天马星空的部门&#x27;</span> <span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;总经办&#x27;</span>,<span class="string">&#x27;都是领导的部门&#x27;</span> </span><br></pre></td></tr></table></figure>
+<h2 id="二、向职级表插入数据"><a href="#二、向职级表插入数据" class="headerlink" title="二、向职级表插入数据"></a>二、向职级表插入数据</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">insert into <span class="selector-attr">[Rank]</span>(RankName,RankRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;初级&#x27;</span>,<span class="string">&#x27;辅助其他人完成任务&#x27;</span>)</span></span></span><br><span class="line">insert into <span class="selector-attr">[Rank]</span>(RankName,RankRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;中级&#x27;</span>,<span class="string">&#x27;具备独立处理事务的能力&#x27;</span>)</span></span></span><br><span class="line">insert into <span class="selector-attr">[Rank]</span>(RankName,RankRemark)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="string">&#x27;高级&#x27;</span>,<span class="string">&#x27;具备可以带动全场节奏的能力&#x27;</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="三、向员工表插入数据"><a href="#三、向员工表插入数据" class="headerlink" title="三、向员工表插入数据"></a>三、向员工表插入数据</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">3</span>,<span class="string">&#x27;刘备&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1984-7-9&#x27;</span>,<span class="number">20000</span>,<span class="string">&#x27;13554785452&#x27;</span>,<span class="string">&#x27;成都&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;孙尚香&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1987-7-9&#x27;</span>,<span class="number">15000</span>,<span class="string">&#x27;13256854578&#x27;</span>,<span class="string">&#x27;荆州&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="string">&#x27;关羽&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1988-8-8&#x27;</span>,<span class="number">12000</span>,<span class="string">&#x27;13985745871&#x27;</span>,<span class="string">&#x27;荆州&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">1</span>,<span class="string">&#x27;张飞&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1990-8-8&#x27;</span>,<span class="number">8000</span>,<span class="string">&#x27;13535987412&#x27;</span>,<span class="string">&#x27;宜昌&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">3</span>,<span class="string">&#x27;赵云&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1989-4-8&#x27;</span>,<span class="number">9000</span>,<span class="string">&#x27;13845789568&#x27;</span>,<span class="string">&#x27;宜昌&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">3</span>,<span class="string">&#x27;马超&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1995-4-8&#x27;</span>,<span class="number">9500</span>,<span class="string">&#x27;13878562568&#x27;</span>,<span class="string">&#x27;香港&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">2</span>,<span class="string">&#x27;黄盖&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1989-4-20&#x27;</span>,<span class="number">8500</span>,<span class="string">&#x27;13335457412&#x27;</span>,<span class="string">&#x27;武汉&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">1</span>,<span class="string">&#x27;貂蝉&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1989-4-20&#x27;</span>,<span class="number">6500</span>,<span class="string">&#x27;13437100050&#x27;</span>,<span class="string">&#x27;武汉&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">2</span>,<span class="string">&#x27;曹操&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1987-12-20&#x27;</span>,<span class="number">25000</span>,<span class="string">&#x27;13889562354&#x27;</span>,<span class="string">&#x27;北京&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">3</span>,<span class="string">&#x27;许褚&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1981-11-11&#x27;</span>,<span class="number">9000</span>,<span class="string">&#x27;13385299632&#x27;</span>,<span class="string">&#x27;北京&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">1</span>,<span class="string">&#x27;典韦&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1978-1-13&#x27;</span>,<span class="number">8000</span>,<span class="string">&#x27;13478545263&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="string">&#x27;曹仁&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1998-12-12&#x27;</span>,<span class="number">7500</span>,<span class="string">&#x27;13878523695&#x27;</span>,<span class="string">&#x27;深圳&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">3</span>,<span class="string">&#x27;孙坚&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1968-11-22&#x27;</span>,<span class="number">9000</span>,<span class="string">&#x27;13698545841&#x27;</span>,<span class="string">&#x27;广州&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">3</span>,<span class="string">&#x27;孙策&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1988-1-22&#x27;</span>,<span class="number">11000</span>,<span class="string">&#x27;13558745874&#x27;</span>,<span class="string">&#x27;深圳&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">2</span>,<span class="string">&#x27;孙权&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1990-2-21&#x27;</span>,<span class="number">12000</span>,<span class="string">&#x27;13698745214&#x27;</span>,<span class="string">&#x27;深圳&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">2</span>,<span class="string">&#x27;大乔&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1995-2-21&#x27;</span>,<span class="number">13000</span>,<span class="string">&#x27;13985478512&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">1</span>,<span class="string">&#x27;小乔&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1996-2-21&#x27;</span>,<span class="number">13500</span>,<span class="string">&#x27;13778787874&#x27;</span>,<span class="string">&#x27;北京&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;周瑜&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1992-10-11&#x27;</span>,<span class="number">8000</span>,<span class="string">&#x27;13987455214&#x27;</span>,<span class="string">&#x27;武汉&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="number">3</span>,<span class="string">&#x27;鲁肃&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1984-9-10&#x27;</span>,<span class="number">5500</span>,<span class="string">&#x27;13254785965&#x27;</span>,<span class="string">&#x27;成都&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="number">3</span>,<span class="string">&#x27;吕蒙&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1987-5-19&#x27;</span>,<span class="number">8500</span>,<span class="string">&#x27;13352197364&#x27;</span>,<span class="string">&#x27;成都&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="string">&#x27;陆逊&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1996-5-19&#x27;</span>,<span class="number">7500</span>,<span class="string">&#x27;13025457392&#x27;</span>,<span class="string">&#x27;南京&#x27;</span>,getdate()</span></span>)</span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">People</span>(DepartmentId,RankId,PeopleName,PeopleSex,PeopleBirth,</span><br><span class="line">PeopleSalary,PeoplePhone,PeopleAddress,PeopleAddTime)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;太史慈&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1983-6-1&#x27;</span>,<span class="number">7500</span>,<span class="string">&#x27;13077778888&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>,getdate()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>其中DepartmentId，RankId，PeopleSalary均为数字类型，在赋值的时候不需要添加单引号，而其它类型需要添加单引号。</p>
+<h2 id="四、查询数据是否插入成功"><a href="#四、查询数据是否插入成功" class="headerlink" title="四、查询数据是否插入成功"></a>四、查询数据是否插入成功</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> Department</span><br><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> [<span class="built_in">Rank</span>]</span><br><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> People </span><br></pre></td></tr></table></figure>
+
+<h1 id="修改和删除数据"><a href="#修改和删除数据" class="headerlink" title="修改和删除数据"></a>修改和删除数据</h1><h2 id="一、修改数据示例"><a href="#一、修改数据示例" class="headerlink" title="一、修改数据示例"></a>一、修改数据示例</h2><p>工资普调，为每个员工+500 元工资（批量修改）</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update People <span class="keyword">set</span> PeopleSalary <span class="comment">= PeopleSalary + 500</span></span><br></pre></td></tr></table></figure>
+<p>将员工编号为8的工资+1000 元（根据条件修改）</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> People <span class="keyword">set</span> PeopleSalary = PeopleSalary + <span class="number">1000</span> <span class="keyword">WHERE</span> PeopleId = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p>将软件部（部门编号已知&#x3D;1）所有员工工资低于1万的全部调整成1 万（根据多条件修改）</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update People <span class="built_in">set</span> PEOPLESALARY = 10000 WHERE <span class="attribute">DepartmentId</span>=1 <span class="keyword">and</span> PEOPLESALARY &lt; 10000</span><br></pre></td></tr></table></figure>
+<p>修改刘备工资为以前的2 倍，并且修改其地址为北京（同时修改多个字段）</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE People <span class="built_in">SET</span> PEOPLESALARY = PEOPLESALARY<span class="number">*2</span>,<span class="attribute">PEOPLEADDRESS</span>=<span class="string">&#x27;北京&#x27;</span> WHERE PEOPLENAME = <span class="string">&#x27;刘备&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、删除数据示例"><a href="#二、删除数据示例" class="headerlink" title="二、删除数据示例"></a>二、删除数据示例</h2><p>删除员工表中所有数据</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> People</span><br></pre></td></tr></table></figure>
+<p>删除市场部(已知部门编号&#x3D;3)中工资大于15000 的所有员工</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> People <span class="keyword">WHERE</span> DepartmentId = <span class="number">3</span> <span class="keyword">and</span> PEOPLESALARY &gt; <span class="number">15000</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、drop、truncate、delete区别"><a href="#三、drop、truncate、delete区别" class="headerlink" title="三、drop、truncate、delete区别"></a>三、drop、truncate、delete区别</h2><p>drop table:删除表对象，表数据、表结构、表对象都进行了删除。</p>
+<p>delete和truncate table：删除表数据，表对象及表结构依然存在。</p>
+<p><strong>delete与truncate table的区别如下：</strong></p>
+<p>delete：</p>
+<p>（1）可以删除表所有数据，也可以根据条件删除数据。</p>
+<p>（2）如果有自动编号，删除后继续编号，例如delete删除表所有数据后，之前数据的自动编号是1，2，3，那么之后新增数据的编号从4开始。</p>
+<p>truncate table：</p>
+<p>（1）只能清空整个表数据，不能根据条件删除数据。</p>
+<p>（2）如果有自动编号，清空表数据后重新编号，例如truncate table清空表所有数据后，之前数据的自动编号是1，2，3，那么之后新增数据的编号仍然从1开始。</p>
+<h1 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h1><p>（1）查询所有行所有列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询所有的部门</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Department</span><br><span class="line"><span class="comment">--查询所有的职级</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> [Rank]</span><br><span class="line"><span class="comment">--查询所有的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> People</span><br></pre></td></tr></table></figure>
+<p>（2）指定列查询（姓名，性别，月薪，电话）</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PeopleName,PeopleSex,PeopleSalary,PeoplePhone <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（3）指定列查询,并自定义中文列名（姓名，性别，月薪，电话）</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PeopleName 姓名,PeopleSex 性别,PeopleSalary 工资,PeoplePhone 电话 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（4）查询公司员工所在城市（不需要重复数据）</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> PeopleAddress <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（5）假设工资普调10%，查询原始工资和调整后的工资，显示（姓名，性别，月薪，加薪后的月薪）（添加列查询）。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SELECT</span> PeopleName 姓名,PeopleSex 性别,PeopleSalary 月薪,PeopleSalary*<span class="number">1</span>.<span class="number">1</span> 加薪后月薪 from People</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h1><p><strong>SQL中常用运算符</strong></p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">=：等于，比较是否相等及赋值</span><br><span class="line">!=：比较不等于</span><br><span class="line">&gt;：比较大于</span><br><span class="line">&lt;：比较小于</span><br><span class="line">&gt;=：比较大于等于</span><br><span class="line">&lt;=：比较小于等于</span><br><span class="line">IS NULL：比较为空</span><br><span class="line">IS <span class="built_in">NOT</span> NULL：比较不为空</span><br><span class="line">in：比较是否在其中</span><br><span class="line">like：模糊查询</span><br><span class="line">BETWEEN...AND...：比较是否在两者之间</span><br><span class="line"><span class="built_in">and</span>：逻辑与（两个条件同时成立表达式成立）</span><br><span class="line"><span class="built_in">or</span>：逻辑或（两个条件有一个成立表达式成立） </span><br><span class="line"><span class="built_in">not</span>：逻辑非（条件成立，表达式则不成立；条件不成立，表达式则成立）</span><br></pre></td></tr></table></figure>
+<p><strong>查询示例：</strong></p>
+<p>（1）根据指定列（姓名，性别，月薪，电话）查询性别为女的员工信息,并自定义中文列名</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> PeopleName 姓名,PeopleSex 性别,PeopleSalary 工资,PeoplePhone 电话 <span class="keyword">from</span> People</span><br><span class="line"><span class="keyword">WHERE</span> PEOPLESEX = <span class="string">&#x27;女&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（2）查询月薪大于等于10000 的员工信息( 单条件 )</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary &gt;= <span class="number">10000</span> </span><br></pre></td></tr></table></figure>
+<p>（3）查询月薪大于等于10000 的女员工信息(多条件)</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary &gt;= <span class="number">10000</span> and PeopleSex = <span class="string">&#x27;女&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（4）显示出出身年月在1980-1-1之后，而且月薪大于等于10000的女员工信息。</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleBirth &gt;= <span class="string">&#x27;1980-1-1&#x27;</span> and PeopleSalary &gt;= <span class="number">10000</span> and PeopleSex = <span class="string">&#x27;女&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（5）显示出月薪大于等于15000 的员工,或者月薪大于等于8000的女员工信息。</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary &gt;= <span class="number">15000</span> or (PeopleSalary &gt;= <span class="number">8000</span> and PeoPleSex = <span class="string">&#x27;女&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>（6）查询月薪在10000-20000 之间员工信息( 多条件 )</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary <span class="operator">&gt;=</span> <span class="number">10000</span> <span class="keyword">and</span> PeopleSalary <span class="operator">&lt;=</span> <span class="number">20000</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary  <span class="keyword">between</span> <span class="number">10000</span> <span class="keyword">and</span> <span class="number">20000</span></span><br></pre></td></tr></table></figure>
+<p>（7）查询出地址在北京或者上海的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleAddress <span class="operator">=</span> <span class="string">&#x27;北京&#x27;</span> <span class="keyword">or</span> PeopleAddress <span class="operator">=</span> <span class="string">&#x27;上海&#x27;</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleAddress <span class="keyword">in</span>(<span class="string">&#x27;北京&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>（8）查询所有员工信息(根据工资排序，降序排列)</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--<span class="keyword">order</span> <span class="keyword">by</span>: 排序  <span class="keyword">asc</span>: 正序  <span class="keyword">desc</span>: 倒序</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">order</span> <span class="keyword">by</span> PeopleSalary <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>（9）显示所有的员工信息，按照名字的长度进行倒序排列</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">order</span> <span class="keyword">by</span> len(PeopleName) <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>（10）查询工资最高的5个人的信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> top <span class="number">5</span> * <span class="keyword">from</span> People <span class="keyword">order</span> <span class="keyword">by</span> PeopleSalary <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>（11）查询工资最高的10%的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> top <span class="number">10</span> percent * <span class="keyword">from</span> People <span class="keyword">order</span> <span class="keyword">by</span> PeopleSalary <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>（12）查询出地址没有填写的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleAddress <span class="keyword">is</span> <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>（13）查询出地址已经填写的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleAddress <span class="keyword">is</span> not <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>（14）查询所有的80后员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleBirth <span class="operator">&gt;=</span> <span class="string">&#x27;1980-1-1&#x27;</span> <span class="keyword">and</span> PeopleBirth <span class="operator">&lt;=</span> <span class="string">&#x27;1989-12-31&#x27;</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeopleBirth <span class="keyword">between</span> <span class="string">&#x27;1980-1-1&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;1989-12-31&#x27;</span></span><br><span class="line"><span class="comment">--方案三：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">&gt;=</span> <span class="number">1980</span> <span class="keyword">and</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">&lt;=</span> <span class="number">1989</span></span><br></pre></td></tr></table></figure>
+<p>（15）查询年龄在30-40 之间，并且工资在15000-30000 之间的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span></span><br><span class="line">(<span class="keyword">year</span>(getdate())<span class="operator">-</span><span class="keyword">year</span>(PeopleBirth) <span class="operator">&gt;=</span> <span class="number">30</span> <span class="keyword">and</span> <span class="keyword">year</span>(getdate())<span class="operator">-</span><span class="keyword">year</span>(PeopleBirth) <span class="operator">&lt;=</span> <span class="number">40</span>) <span class="keyword">and</span></span><br><span class="line">(PeopleSalary <span class="operator">&gt;=</span> <span class="number">15000</span> <span class="keyword">and</span> PeopleSalary <span class="operator">&lt;=</span> <span class="number">30000</span>)</span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span></span><br><span class="line">(<span class="keyword">year</span>(getdate())<span class="operator">-</span><span class="keyword">year</span>(PeopleBirth) <span class="keyword">between</span> <span class="number">30</span> <span class="keyword">and</span> <span class="number">40</span>)</span><br><span class="line"><span class="keyword">and</span> PeopleSalary <span class="keyword">between</span> <span class="number">15000</span> <span class="keyword">and</span> <span class="number">30000</span></span><br></pre></td></tr></table></figure>
+<p>（16）查询出巨蟹 6.22–7.22 的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> </span><br><span class="line">(<span class="keyword">month</span>(PeopleBirth) <span class="operator">=</span> <span class="number">6</span> <span class="keyword">and</span> <span class="keyword">DAY</span>(PeopleBirth) <span class="operator">&gt;=</span> <span class="number">22</span>) <span class="keyword">or</span></span><br><span class="line">(<span class="keyword">month</span>(PeopleBirth) <span class="operator">=</span> <span class="number">7</span> <span class="keyword">and</span> <span class="keyword">DAY</span>(PeopleBirth) <span class="operator">&lt;=</span> <span class="number">22</span>)</span><br></pre></td></tr></table></figure>
+<p>（17）查询工资比赵云高的人</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary &gt; </span><br><span class="line">(<span class="keyword">select</span> PeopleSalary <span class="keyword">from</span> People <span class="keyword">where</span> PEOPLENAME = <span class="string">&#x27;赵云&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>（18）查询出和赵云在同一个城市的人</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PEOPLEADDRESS = </span><br><span class="line">(<span class="keyword">select</span> PEOPLEADDRESS <span class="keyword">from</span> People <span class="keyword">where</span> PEOPLENAME = <span class="string">&#x27;赵云&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>（19）查询出生肖为鼠的人员信息</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="function"><span class="keyword">from</span> People <span class="keyword">where</span> <span class="title">year</span>(<span class="params">PeopleBirth</span>) % 12</span> = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>（20）查询所有员工信息，添加一列显示属相(鼠,牛,虎,兔,龙,蛇,马,羊,猴,鸡,狗,猪)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> PeopleName 姓名,PeopleSex 性别,PeopleSalary 工资,PeoplePhone 电话,PEOPLEBIRTH 生日,</span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">4</span> <span class="keyword">then</span> <span class="string">&#x27;鼠&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">5</span> <span class="keyword">then</span> <span class="string">&#x27;牛&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">6</span> <span class="keyword">then</span> <span class="string">&#x27;虎&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">7</span> <span class="keyword">then</span> <span class="string">&#x27;兔&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">8</span> <span class="keyword">then</span> <span class="string">&#x27;龙&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">9</span> <span class="keyword">then</span> <span class="string">&#x27;蛇&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">10</span> <span class="keyword">then</span> <span class="string">&#x27;马&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">11</span> <span class="keyword">then</span> <span class="string">&#x27;羊&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">0</span> <span class="keyword">then</span> <span class="string">&#x27;猴&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">1</span> <span class="keyword">then</span> <span class="string">&#x27;鸡&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">2</span> <span class="keyword">then</span> <span class="string">&#x27;狗&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span> <span class="operator">=</span> <span class="number">3</span> <span class="keyword">then</span> <span class="string">&#x27;猪&#x27;</span></span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">end</span> 生肖</span><br><span class="line"><span class="keyword">from</span> People</span><br><span class="line"> </span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> PeopleName 姓名,PeopleSex 性别,PeopleSalary 工资,PeoplePhone 电话,PEOPLEBIRTH 生日,</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">year</span>(PeopleBirth) <span class="operator">%</span> <span class="number">12</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> <span class="string">&#x27;鼠&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">5</span> <span class="keyword">then</span> <span class="string">&#x27;牛&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">6</span> <span class="keyword">then</span> <span class="string">&#x27;虎&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">7</span> <span class="keyword">then</span> <span class="string">&#x27;兔&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">8</span> <span class="keyword">then</span> <span class="string">&#x27;龙&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">9</span> <span class="keyword">then</span> <span class="string">&#x27;蛇&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">10</span> <span class="keyword">then</span> <span class="string">&#x27;马&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">11</span> <span class="keyword">then</span> <span class="string">&#x27;羊&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">0</span> <span class="keyword">then</span> <span class="string">&#x27;猴&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> <span class="string">&#x27;鸡&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> <span class="string">&#x27;狗&#x27;</span></span><br><span class="line">    <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> <span class="string">&#x27;猪&#x27;</span></span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">end</span> 生肖</span><br><span class="line"><span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h1><p>模糊查询使用like关键字和通配符结合来实现，通配符具体含义如下：</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%：代表匹配0个字符、1个字符或多个字符。</span></span><br><span class="line"><span class="symbol">_</span>：代表匹配有且只有<span class="number">1</span>个字符。</span><br><span class="line">[]：代表匹配范围内</span><br><span class="line">[^]：代表匹配不在范围内</span><br></pre></td></tr></table></figure>
+<p>（1）查询姓刘的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People  <span class="keyword">where</span> PeopleName <span class="keyword">like</span> <span class="string">&#x27;刘%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（2）查询名字中含有 “ 尚 “ 的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People  <span class="keyword">where</span> PeopleName <span class="keyword">like</span> <span class="string">&#x27;%尚%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（3）显示名字中含有“尚”或者“史”的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People  <span class="keyword">where</span> PeopleName <span class="keyword">like</span> <span class="string">&#x27;%尚%&#x27;</span> or PeopleName <span class="keyword">like</span> <span class="string">&#x27;%史%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（4）查询姓刘的员工，名字是2个字</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People  <span class="keyword">where</span> PeopleName <span class="keyword">like</span> <span class="string">&#x27;刘_&#x27;</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> <span class="built_in">SUBSTRING</span>(PeopleName,<span class="number">1</span>,<span class="number">1</span>) <span class="operator">=</span> <span class="string">&#x27;刘&#x27;</span> <span class="keyword">and</span> LEN(PeopleName) <span class="operator">=</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>（5）查询出名字最后一个字是香，名字一共三个字的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People  <span class="keyword">where</span> PeopleName <span class="keyword">like</span> <span class="string">&#x27;__香&#x27;</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> <span class="built_in">SUBSTRING</span>(PeopleName,<span class="number">3</span>,<span class="number">1</span>) <span class="operator">=</span> <span class="string">&#x27;香&#x27;</span> <span class="keyword">and</span> LEN(PeopleName) <span class="operator">=</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>（6）查询出电话号码开头138的员工信息</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People  <span class="keyword">where</span> PeoplePhone <span class="keyword">like</span> <span class="string">&#x27;138%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（7）查询出电话号码开头138的员工信息,第4位可能是7，可能8 ，最后一个号码是5</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeoplePhone <span class="keyword">like</span> <span class="string">&#x27;138[7,8]%5&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（8）查询出电话号码开头133的员工信息,第4位是2-5之间的数字 ，最后一个号码不是2和3</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeoplePhone <span class="keyword">like</span> <span class="string">&#x27;133[2,3,4,5]%[^2,3]&#x27;</span></span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> PeoplePhone <span class="keyword">like</span> <span class="string">&#x27;133[2-5]%[^2-3]&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><p>SQL SERVER中聚合函数主要有：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">count:</span>求数量</span><br><span class="line"><span class="symbol">max:</span>求最大值</span><br><span class="line"><span class="symbol">min:</span>求最小值</span><br><span class="line"><span class="symbol">sum:</span>求和</span><br><span class="line"><span class="symbol">avg:</span>求平均值</span><br></pre></td></tr></table></figure>
+<h2 id="一、聚合函数举例应用"><a href="#一、聚合函数举例应用" class="headerlink" title="一、聚合函数举例应用"></a>一、聚合函数举例应用</h2><p>（1）求员工总人数</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">COUNT</span>(*) 数量 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（2）求最大值，求最高工资</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">MAX</span>(PeopleSalary) 最高工资 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（3）求最小时，求最小工资</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">MIN</span>(PeopleSalary) 最低工资 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（4）求和，求所有员工的工资总和</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">SUM</span>(PeopleSalary) 工资总和 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>（5）求平均值，求所有员工的平均工资</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> AVG(PeopleSalary) 平均工资 <span class="keyword">from</span> People</span><br><span class="line"><span class="comment">--方案二：精确到2位小数</span></span><br><span class="line"><span class="keyword">select</span> ROUND(AVG(PeopleSalary),<span class="number">2</span>)  平均工资 <span class="keyword">from</span> People</span><br><span class="line"><span class="comment">--方案三：精确到2位小数</span></span><br><span class="line"><span class="keyword">select</span> Convert(<span class="type">decimal</span>(<span class="number">12</span>,<span class="number">2</span>),AVG(PeopleSalary))  平均工资 <span class="keyword">from</span> People</span><br></pre></td></tr></table></figure>
+<p>ROUND函数用法：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">round(num,len,[<span class="keyword">type</span>])</span><br><span class="line">其中:</span><br><span class="line">num表示需要处理的数字，len表示需要保留的长度，<span class="keyword">type</span>处理类型(<span class="number">0</span>是默认值代表四舍五入，非<span class="number">0</span>代表直接截取)</span><br><span class="line"><span class="keyword">select</span> ROUND(<span class="number">123.45454</span>,<span class="number">3</span>)  <span class="comment">--123.45500</span></span><br><span class="line"><span class="keyword">select</span> ROUND(<span class="number">123.45454</span>,<span class="number">3</span>,<span class="number">1</span>) <span class="comment">--123.45400</span></span><br></pre></td></tr></table></figure>
+<p>（6）求数量，最大值，最小值，总和，平均值，在一行显示</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select <span class="built_in">COUNT</span>(*) 数量,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,<span class="built_in">AVG</span>(PeopleSalary) 平均工资 from People</span><br></pre></td></tr></table></figure>
+<p>（7）查询出武汉地区的员工人数，总工资，最高工资，最低工资和平均工资</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="string">&#x27;武汉&#x27;</span> 地区,<span class="built_in">COUNT</span>(*) 数量,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资</span><br><span class="line">,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,<span class="built_in">AVG</span>(PeopleSalary) 平均工资 <span class="keyword">from</span> People </span><br><span class="line"><span class="keyword">WHERE</span> PEOPLEADDRESS = <span class="string">&#x27;武汉&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（8）求出工资比平均工资高的人员信息</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">where</span> PeopleSalary &gt; (<span class="keyword">select</span> <span class="built_in">AVG</span>(PeopleSalary) 平均工资 <span class="keyword">from</span> People)</span><br></pre></td></tr></table></figure>
+<p>（9）求数量，年龄最大值，年龄最小值，年龄总和，年龄平均值，在一行显示</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--方案一：</span><br><span class="line">select <span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 平均年龄 </span><br><span class="line">from People</span><br><span class="line">--方案二：</span><br><span class="line">select <span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 平均年龄 </span><br><span class="line">from People</span><br></pre></td></tr></table></figure>
+<p>（10）计算出月薪在10000 以上的男性员工的最大年龄，最小年龄和平均年龄</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--方案一：</span><br><span class="line">select <span class="string">&#x27;男&#x27;</span> 性别,<span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 平均年龄 </span><br><span class="line">from People where PeopleSex = <span class="string">&#x27;男&#x27;</span> and PeopleSalary &gt;= <span class="number">10000</span></span><br><span class="line">--方案二：</span><br><span class="line">select <span class="string">&#x27;男&#x27;</span> 性别,<span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 平均年龄 </span><br><span class="line">from People where PeopleSex = <span class="string">&#x27;男&#x27;</span> and PeopleSalary &gt;= <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>（11）统计出所在地在“武汉或上海”的所有女员工数量以及最大年龄，最小年龄和平均年龄</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--方案一：</span><br><span class="line">select <span class="string">&#x27;武汉或上海&#x27;</span> 地区,<span class="string">&#x27;女&#x27;</span> 性别,<span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(year(getdate()</span></span>)<span class="built_in">-year</span>(PeopleBirth)) 平均年龄  </span><br><span class="line">from People where PeopleSex = <span class="string">&#x27;女&#x27;</span> and PeopleAddress <span class="built_in">in</span>(<span class="string">&#x27;武汉&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>)</span><br><span class="line">--方案二：</span><br><span class="line">select <span class="string">&#x27;武汉或上海&#x27;</span> 地区,<span class="string">&#x27;女&#x27;</span> 性别,<span class="built_in">COUNT</span>(*) 数量,</span><br><span class="line"><span class="function"><span class="title">MAX</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最高年龄,</span><br><span class="line"><span class="function"><span class="title">MIN</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 最低年龄,</span><br><span class="line"><span class="function"><span class="title">SUM</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 年龄总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(DATEDIFF(year, PeopleBirth, getDate()</span></span>)) 平均年龄  </span><br><span class="line">from People where PeopleSex = <span class="string">&#x27;女&#x27;</span> and PeopleAddress <span class="built_in">in</span>(<span class="string">&#x27;武汉&#x27;</span>,<span class="string">&#x27;上海&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>（12）求出年龄比平均年龄高的人员信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> </span><br><span class="line"><span class="keyword">year</span>(getdate())<span class="operator">-</span><span class="keyword">year</span>(PeopleBirth) <span class="operator">&gt;</span> </span><br><span class="line">(<span class="keyword">select</span> <span class="built_in">AVG</span>(<span class="keyword">year</span>(getdate())<span class="operator">-</span><span class="keyword">year</span>(PeopleBirth)) </span><br><span class="line"><span class="keyword">from</span> People)</span><br><span class="line"><span class="comment">--方案二：</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> People <span class="keyword">where</span> </span><br><span class="line">DATEDIFF(<span class="keyword">year</span>, PeopleBirth, getDate()) <span class="operator">&gt;</span> </span><br><span class="line">(<span class="keyword">select</span> <span class="built_in">AVG</span>(DATEDIFF(<span class="keyword">year</span>, PeopleBirth, getDate())) </span><br><span class="line"><span class="keyword">from</span> People)</span><br></pre></td></tr></table></figure>
+<h2 id="二、补充-SQL中常用时间处理函数"><a href="#二、补充-SQL中常用时间处理函数" class="headerlink" title="二、补充-SQL中常用时间处理函数"></a>二、补充-SQL中常用时间处理函数</h2><p>GETDATE() 返回当前的日期和时间</p>
+<p>DATEPART() 返回日期&#x2F;时间的单独部分</p>
+<p>DATEADD()  返回日期中添加或减去指定的时间间隔</p>
+<p>DATEDIFF() 返回两个日期直接的时间</p>
+<p>DATENAME() 返回指定日期的指定日期部分的整数</p>
+<p>CONVERT()  返回不同格式的时间</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> DATEDIFF(<span class="keyword">day</span>, <span class="string">&#x27;2019-08-20&#x27;</span>, getDate());    <span class="comment">--获取指定时间单位的差值</span></span><br><span class="line"><span class="keyword">SELECT</span> DATEADD(<span class="keyword">MINUTE</span>,<span class="number">-5</span>,GETDATE())               <span class="comment">--加减时间,此处为获取五分钟前的时间,MINUTE 表示分钟，可为 YEAR,MONTH,DAY,HOUR</span></span><br><span class="line"><span class="keyword">select</span> DATENAME(<span class="keyword">month</span>, getDate());                <span class="comment">--当前月份</span></span><br><span class="line"><span class="keyword">select</span> DATENAME(WEEKDAY, getDate());              <span class="comment">--当前星期几</span></span><br><span class="line"><span class="keyword">select</span> DATEPART(<span class="keyword">month</span>, getDate());                <span class="comment">--当前月份</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">DAY</span>(getDate());                            <span class="comment">--返回当前日期天数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MONTH</span>(getDate());                          <span class="comment">--返回当前日期月数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">YEAR</span>(getDate());                           <span class="comment">--返回当前日期年数</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONVERT</span>(<span class="type">VARCHAR</span>(<span class="number">22</span>),GETDATE(),<span class="number">20</span>)          <span class="comment">--2020-01-09 14:46:46</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONVERT</span>(<span class="type">VARCHAR</span>(<span class="number">24</span>),GETDATE(),<span class="number">21</span>)          <span class="comment">--2020-01-09 14:46:55.91</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONVERT</span>(<span class="type">VARCHAR</span>(<span class="number">22</span>),GETDATE(),<span class="number">23</span>)          <span class="comment">--2020-01-09</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONVERT</span>(<span class="type">VARCHAR</span>(<span class="number">22</span>),GETDATE(),<span class="number">24</span>)          <span class="comment">--15:04:07</span></span><br><span class="line"><span class="keyword">Select</span> <span class="keyword">CONVERT</span>(<span class="type">varchar</span>(<span class="number">20</span>),GETDATE(),<span class="number">14</span>)          <span class="comment">--15:05:49:330</span></span><br></pre></td></tr></table></figure>
+<p><strong>时间格式控制字符串：</strong></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>日期单位</th>
+<th>缩写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>年</td>
+<td>year</td>
+<td>yyyy 或yy</td>
+</tr>
+<tr>
+<td>季度</td>
+<td>quarter</td>
+<td>qq,q</td>
+</tr>
+<tr>
+<td>月</td>
+<td>month</td>
+<td>mm,m</td>
+</tr>
+<tr>
+<td>一年中第几天</td>
+<td>dayofyear</td>
+<td>dy,y</td>
+</tr>
+<tr>
+<td>日</td>
+<td>day</td>
+<td>dd,d</td>
+</tr>
+<tr>
+<td>一年中第几周</td>
+<td>week</td>
+<td>wk,ww</td>
+</tr>
+<tr>
+<td>星期</td>
+<td>weekday</td>
+<td>dw</td>
+</tr>
+<tr>
+<td>小时</td>
+<td>Hour</td>
+<td>hh</td>
+</tr>
+<tr>
+<td>分钟</td>
+<td>minute</td>
+<td>mi,n</td>
+</tr>
+<tr>
+<td>秒</td>
+<td>second</td>
+<td>ss,s</td>
+</tr>
+<tr>
+<td>毫秒</td>
+<td>millisecond</td>
+<td>ms</td>
+</tr>
+</tbody></table>
+<h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h1><p>（1）根据员工所在地区分组统计员工人数 ,员工工资总和 ,平均工资，最高工资和最低工资</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方案一：使用union(此方案需要知道所有的地区，分别查询出所有地区的数据，然后使用union拼接起来。)</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;武汉&#x27;</span> 地区,COUNT(*) 数量,MAX(PeopleSalary) 最高工资,MIN(PeopleSalary) 最低工资</span><br><span class="line">,SUM(PeopleSalary) 工资总和,AVG(PeopleSalary) 平均工资 <span class="keyword">from</span> People</span><br><span class="line"> <span class="keyword">where</span> PeopleAddress = <span class="string">&#x27;武汉&#x27;</span> <span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;北京&#x27;</span> 地区,COUNT(*) 数量,MAX(PeopleSalary) 最高工资,MIN(PeopleSalary) 最低工资</span><br><span class="line">,SUM(PeopleSalary) 工资总和,AVG(PeopleSalary) 平均工资 <span class="keyword">from</span> People</span><br><span class="line"> <span class="keyword">where</span> PeopleAddress = <span class="string">&#x27;北京&#x27;</span></span><br><span class="line"> <span class="comment">--...其它地区数据</span></span><br><span class="line"> <span class="comment">--...其他地区数据</span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">--方案二：使用Group by</span></span><br><span class="line"><span class="keyword">select</span> PeopleAddress 地区,COUNT(*) 人数,SUM(PeopleSalary) 工资总和,</span><br><span class="line">AVG(PeopleSalary) 平均工资,MAX(PeopleSalary) 最高工资,MIN(PeopleSalary) 最低工资 </span><br><span class="line"><span class="keyword">from</span> People <span class="keyword">group</span> <span class="keyword">by</span> PeopleAddress</span><br></pre></td></tr></table></figure>
+<p>（2）根据员工所在地区分组统计员工人数，员工工资总和，平均工资，最高工资和最低工资，1985 年及以后出身的员工不参与统计。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> PeopleAddress 地区,<span class="built_in">COUNT</span>(*) 人数,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,</span><br><span class="line"><span class="built_in">AVG</span>(PeopleSalary) 平均工资,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资 </span><br><span class="line"><span class="keyword">from</span> People</span><br><span class="line"><span class="keyword">where</span> PeopleBirth &lt; <span class="string">&#x27;1985-1-1&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> PeopleAddress</span><br></pre></td></tr></table></figure>
+<p>（3）根据员工所在地区分组统计员工人数，员工工资总和，平均工资，最高工资和最低工资，要求筛选出员工人数至少在2人及以上的记录，并且1985年及以后出身的员工不参与统计。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> PeopleAddress 地区,<span class="built_in">COUNT</span>(*) 人数,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,</span><br><span class="line"><span class="built_in">AVG</span>(PeopleSalary) 平均工资,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资 </span><br><span class="line"><span class="keyword">from</span> People </span><br><span class="line"><span class="keyword">where</span> PeopleBirth &lt; <span class="string">&#x27;1985-1-1&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> PeopleAddress</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">COUNT</span>(*) &gt;= <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><h2 id="一、笛卡尔乘积"><a href="#一、笛卡尔乘积" class="headerlink" title="一、笛卡尔乘积"></a>一、笛卡尔乘积</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People,Department</span><br></pre></td></tr></table></figure>
+<p>此查询结果会将People表的所有数据和Department表的所有数据进行依次排列组合形成新的记录。例如People表有10条记录，Department表有3条记录，则排列组合之后查询结果会有10*3&#x3D;30条记录。</p>
+<h2 id="二、简单多表查询"><a href="#二、简单多表查询" class="headerlink" title="二、简单多表查询"></a>二、简单多表查询</h2><p>此种查询不符合主外建关系的数据不会被显示</p>
+<p><strong>查询员工信息，同时显示部门名称</strong></p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People,Department <span class="keyword">where</span> People.DepartmentId = Department.DepartmentId </span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示职级名称</strong></p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> People,<span class="built_in">Rank</span> where People.<span class="built_in">RankId</span> = <span class="built_in">Rank</span>.<span class="built_in">RankId</span></span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示部门名称，职位名称</strong></p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> People,Department,<span class="built_in">Rank</span></span><br><span class="line">where People.DepartmentId = Department.DepartmentId <span class="built_in">and</span> People.<span class="built_in">RankId</span> = <span class="built_in">Rank</span>.<span class="built_in">RankId</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、内连接"><a href="#三、内连接" class="headerlink" title="三、内连接"></a>三、内连接</h2><p>此种查询不符合主外建关系的数据不会被显示</p>
+<p><strong>查询员工信息，同时显示部门名称</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">inner</span> <span class="keyword">join</span> Department <span class="keyword">on</span> People.DepartmentId = Department.DepartmentId </span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示职级名称</strong></p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> People inner <span class="built_in">join</span> <span class="built_in">Rank</span> on People.<span class="built_in">RankId</span> = <span class="built_in">Rank</span>.<span class="built_in">RankId</span></span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示部门名称，职位名称</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People </span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> Department <span class="keyword">on</span> People.DepartmentId = Department.DepartmentId </span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> Rank <span class="keyword">on</span> People.RankId = Rank.RankId</span><br></pre></td></tr></table></figure>
+<h2 id="三、外连接"><a href="#三、外连接" class="headerlink" title="三、外连接"></a>三、外连接</h2><p>外连接分为左外连接、右外连接和全外连接。</p>
+<p>左外联接：以左表为主表显示全部数据，主外键关系找不到数据的地方null取代。</p>
+<p><strong>以下是左外连接的语法示例：</strong></p>
+<p><strong>查询员工信息，同时显示部门名称</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People <span class="keyword">left</span> <span class="keyword">join</span> Department <span class="keyword">on</span> People.DepartmentId = Department.DepartmentId </span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示职级名称</strong></p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> People left <span class="built_in">join</span> <span class="built_in">Rank</span> on People.<span class="built_in">RankId</span> = <span class="built_in">Rank</span>.<span class="built_in">RankId</span></span><br></pre></td></tr></table></figure>
+<p><strong>查询员工信息，同时显示部门名称，职位名称</strong></p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> People </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Department <span class="keyword">on</span> People.DepartmentId = Department.DepartmentId </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Rank <span class="keyword">on</span> People.RankId = Rank.RankId</span><br></pre></td></tr></table></figure>
+<p>右外连接（right join）：右外连接和左外连接类似，A left join B  &#x3D;&#x3D;  B right join A</p>
+<p>全外连接（full join）：两张表的所有数据无论是否符合主外键关系必须全部显示，不符合主外键关系的地方null取代。</p>
+<h2 id="四、多表查询综合示例"><a href="#四、多表查询综合示例" class="headerlink" title="四、多表查询综合示例"></a>四、多表查询综合示例</h2><p>（1）查询出武汉地区所有的员工信息，要求显示部门名称以及员工的详细资料</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> PeopleName 姓名,People.DepartmentId 部门编号 ,DepartmentName 部门名称,</span><br><span class="line">PeopleSex 性别,PeopleBirth 生日,</span><br><span class="line">PeopleSalary 月薪,PeoplePhone 电话,PeopleAddress 地区</span><br><span class="line"><span class="keyword">from</span> People <span class="keyword">left</span> <span class="keyword">join</span> DEPARTMENT <span class="keyword">on</span> Department.DepartmentId = People.DepartmentId</span><br><span class="line"><span class="keyword">where</span> PeopleAddress = <span class="string">&#x27;武汉&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（2）查询出武汉地区所有的员工信息，要求显示部门名称，职级名称以及员工的详细资料</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> PeopleName 姓名,DepartmentName 部门名称,RankName 职位名称,</span><br><span class="line">PeopleSex 性别,PeopleBirth 生日,</span><br><span class="line">PeopleSalary 月薪,PeoplePhone 电话,PeopleAddress 地区</span><br><span class="line"><span class="keyword">from</span> People <span class="keyword">left</span> <span class="keyword">join</span> DEPARTMENT <span class="keyword">on</span> Department.DepartmentId = People.DepartmentId</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> [Rank] <span class="keyword">on</span> [Rank].RankId = People.RankId</span><br><span class="line"><span class="keyword">where</span> PeopleAddress = <span class="string">&#x27;武汉&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>（3）根据部门分组统计员工人数，员工工资总和，平均工资，最高工资和最低工资。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--提示：在进行分组统计查询的时候添加二表联合查询。</span><br><span class="line"><span class="keyword">select</span> DepartmentName 部门名称,<span class="built_in">COUNT</span>(*) 人数,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,</span><br><span class="line"><span class="built_in">AVG</span>(PeopleSalary) 平均工资,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资 </span><br><span class="line"><span class="keyword">from</span> People <span class="keyword">left</span> <span class="keyword">join</span> DEPARTMENT <span class="keyword">on</span> Department.DepartmentId = People.DepartmentId</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Department.DepartmentId,DepartmentName</span><br></pre></td></tr></table></figure>
+<p>（4）根据部门分组统计员工人数，员工工资总和，平均工资，最高工资和最低工资，平均工资在10000 以下的不参与统计，并且根据平均工资降序排列。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> DepartmentName 部门名称,<span class="built_in">COUNT</span>(*) 人数,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,</span><br><span class="line"><span class="built_in">AVG</span>(PeopleSalary) 平均工资,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资 </span><br><span class="line"><span class="keyword">from</span> People <span class="keyword">left</span> <span class="keyword">join</span> DEPARTMENT <span class="keyword">on</span> Department.DepartmentId = People.DepartmentId</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Department.DepartmentId,DepartmentName</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">AVG</span>(PeopleSalary) &gt;= <span class="number">10000</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">AVG</span>(PeopleSalary) <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>（5）根据部门名称，然后根据职位名称，分组统计员工人数，员工工资总和，平均工资，最高工资和最低工资</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select DepartmentName 部门名称,RANKNAME 职级名称,<span class="built_in">COUNT</span>(*) 人数,<span class="built_in">SUM</span>(PeopleSalary) 工资总和,</span><br><span class="line"><span class="function"><span class="title">AVG</span><span class="params">(PeopleSalary)</span></span> 平均工资,<span class="built_in">MAX</span>(PeopleSalary) 最高工资,<span class="built_in">MIN</span>(PeopleSalary) 最低工资 </span><br><span class="line">from People </span><br><span class="line">LEFT JOIN DEPARTMENT on Department<span class="selector-class">.DepartmentId</span> = People<span class="selector-class">.DepartmentId</span></span><br><span class="line">LEFT JOIN <span class="selector-attr">[Rank]</span> on <span class="selector-attr">[Rank]</span><span class="selector-class">.RANKID</span> = People<span class="selector-class">.RANKID</span></span><br><span class="line">group by Department<span class="selector-class">.DepartmentId</span>,DepartmentName,<span class="selector-attr">[Rank]</span><span class="selector-class">.RANKID</span>,RANKNAME</span><br></pre></td></tr></table></figure>
+<h2 id="五、自连接"><a href="#五、自连接" class="headerlink" title="五、自连接"></a>五、自连接</h2><p>自连接：自己连接自己。</p>
+<p>例如有如下结构和数据：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">create <span class="selector-tag">table</span> Dept</span><br><span class="line">(</span><br><span class="line">    DeptId int primary key,  --部门编号</span><br><span class="line">    DeptName <span class="built_in">varchar</span>(<span class="number">50</span>) not null, --部门名称</span><br><span class="line">    ParentId int not null,  --上级部门编号</span><br><span class="line">)</span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">1</span>,<span class="string">&#x27;软件部&#x27;</span>,<span class="number">0</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">2</span>,<span class="string">&#x27;硬件部&#x27;</span>,<span class="number">0</span>)</span></span></span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">3</span>,<span class="string">&#x27;软件研发部&#x27;</span>,<span class="number">1</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">4</span>,<span class="string">&#x27;软件测试部&#x27;</span>,<span class="number">1</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">5</span>,<span class="string">&#x27;软件实施部&#x27;</span>,<span class="number">1</span>)</span></span></span><br><span class="line"> </span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">6</span>,<span class="string">&#x27;硬件研发部&#x27;</span>,<span class="number">2</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">7</span>,<span class="string">&#x27;硬件测试部&#x27;</span>,<span class="number">2</span>)</span></span></span><br><span class="line">insert into <span class="built_in">Dept</span>(DeptId,DeptName,ParentId)</span><br><span class="line"><span class="function"><span class="title">values</span><span class="params">(<span class="number">8</span>,<span class="string">&#x27;硬件实施部&#x27;</span>,<span class="number">2</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>如果要查询出所有部门信息，并且查询出自己的上级部门，查询结果如下：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--部门编号      部门名称     上级部门</span></span><br><span class="line"><span class="comment">-- 3           软件研发部     软件部</span></span><br><span class="line"><span class="comment">-- 4           软件测试部     软件部</span></span><br><span class="line"><span class="comment">-- 5           软件实施部     软件部</span></span><br><span class="line"><span class="comment">-- 6           硬件研发部     硬件部</span></span><br><span class="line"><span class="comment">-- 7           硬件测试部     硬件部</span></span><br><span class="line"><span class="comment">-- 8           硬件实施部     硬件部</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">select</span> A.DeptId 部门编号,A.DeptName 部门名称,B.DeptName 上级名称 <span class="keyword">from</span> Dept A </span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> Dept B <span class="keyword">on</span> A.ParentId = B.DeptId</span><br></pre></td></tr></table></figure>
+
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">杨宛荧</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://sakuraywy.github.io/2023/06/13/sql-server/">https://sakuraywy.github.io/2023/06/13/sql-server/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">杨宛荧</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'totkolgsTMW4VoEGjQJKOGuu-gzGzoHsz',
+        appKey: 'bHn9FEQPusTzatBI6JLmypW4',
+        serverURLs: 'https://totkolgs.lc-cn-n1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/06/13/sql-server/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SQL server">
+                        
+                        <span class="card-title">SQL server</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            杨宛荧
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06/03/cao-zuo-xi-tong-ji-suan-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="操作系统计算题">
+                        
+                        <span class="card-title">操作系统计算题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            杨宛荧
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8524692679"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">杨宛荧</a>
+           
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sakuraYWY" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1084126002@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1084126002" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1084126002" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

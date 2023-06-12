@@ -453,14 +453,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-05
+                    2023-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.1k
                 </div>
                 
 
@@ -645,7 +645,9 @@
 </tbody></table>
 </li>
 </ol>
-<p> 特点：列表的每一项前默认显示圆点标识<br> ul只能包含li标签，li标签可以包含任意内容<br>2. 有序列表</p>
+<p> 特点：列表的每一项前默认显示圆点标识<br> ul只能包含li标签，li标签可以包含任意内容</p>
+<blockquote>
+<p>去掉列表的符号<br>     li{<br>      list-style: none;<br>     }<br>2. 有序列表</p>
 <table>
 <thead>
 <tr>
@@ -662,6 +664,7 @@
 <td>表示无序列表的每一项，用于包含每一项的内容</td>
 </tr>
 </tbody></table>
+</blockquote>
 <p> 特点：列表的每一项前默认序号<br> ol只能包含li标签，li标签可以包含任意内容</p>
 <ol start="3">
 <li>自定义列表<table>
@@ -1004,6 +1007,9 @@
 <p>注：以上显示特点和div一样，但是比div多了不同的属性</p>
 </blockquote>
 <h4 id="字符实体"><a href="#字符实体" class="headerlink" title="字符实体"></a>字符实体</h4><p>场景：在网页中展示特殊符号时，需要使用字符实体替代<br>结构：&amp;英文<br>常见字符实体：空格  &amp;nbsp分号</p>
+<h4 id="设置滚动字幕"><a href="#设置滚动字幕" class="headerlink" title="设置滚动字幕"></a>设置滚动字幕</h4><p>1 .<marquee>默认情况下，滚动文字从右向做滚动</marquee><br>2.属性：direction可以修改字幕滚动方向<br>  属性值：up 从下往上<br>       down 从上往下<br>       left 从右往左<br>       right 从左往右</p>
+<p>  属性：behavior设置滚动字幕的滚动行为<br>  属性值：scroll 设置文字循环滚动（默认）<br>          slide 只进行一次滚动<br>          alternate 循环交替往返滚动</p>
+<p>  属性：scorllamount 设置滚动速度  默认速度值为6<br>        scrolldelay  设置滚动延迟  默认100毫秒<br>  属性值：value，取值为数字</p>
 
                 
             </div>
