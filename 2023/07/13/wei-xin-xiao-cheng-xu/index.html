@@ -13,7 +13,7 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
 开发模式不同
 
 
-">
+小程序项目的基本组成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -457,14 +457,14 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2023-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    85
+                    4.3k
                 </div>
                 
 
@@ -489,7 +489,420 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
 <li><p>开发模式不同</p>
 </li>
 </ol>
+<h3 id="小程序项目的基本组成结构"><a href="#小程序项目的基本组成结构" class="headerlink" title="小程序项目的基本组成结构"></a>小程序项目的基本组成结构</h3><p><strong>pages</strong>：用来存放小程序的所有页面（index、logs）</p>
+<ul>
+<li>每个页面由4个基本文件组成，分别是<br>①.js文件：页面的脚本文件，存放页面的数据、事件处理函数等<br>②.json文件：当前页面的配置文件，配置窗口的外观、表现等<br>③.wxml文件：页面的模板结构文件<br>④.wxss:当前页面的样式表文件</li>
+</ul>
+<p><strong>utils</strong>：用来存放工具性质的模块，（例如：格式化时间的自定义模块）<br><strong>app.js</strong>:小程序项目的入口文件<br><strong>app.json</strong>:小程序项目的全局配置文件<br><strong>app.wxss</strong>:小程序项目的全局样式文件<br><strong>projec.config.json</strong>:项目的配置文件<br><strong>sitemap.json</strong>:用来配置小程序及其页面是否允许被微信搜索</p>
+<h3 id="页面基本文件介绍"><a href="#页面基本文件介绍" class="headerlink" title="页面基本文件介绍"></a>页面基本文件介绍</h3><p><strong>json</strong>：json是一种数据格式，在实际开发中，json总是以配置文件的形式出现。在小程序中，通过不同的.json配置文件，可以对小程序项目进行不同级别的配置<br>有四种json配置文件，分别是</p>
+<ol>
+<li>项目根目录中的app.json配置文件</li>
+<li>项目根目录中的project.config.json配置文件</li>
+<li>项目根目录中的sitemap.json配置文件</li>
+<li>每个页面文件夹中的.json配置文件</li>
+</ol>
+<h4 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h4><p>是当前小程序的全局配置，包括了小程序的所有页面路径、窗口外观、界面表现、底部tab等</p>
+<ol>
+<li>pages：用来记录当前小程序所有界面的路径</li>
+<li>window：全局定义小程序所有页面的背景色、文字颜色等</li>
+<li>style：全局定义小程序组件所使用的样式版本</li>
+<li>sitemapLocation：用来指明sitemap.json的位置</li>
+</ol>
+<h4 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json"></a>project.config.json</h4><p>是项目配置文件，用来记录我们对小程序开发工具所做的个性化配置，例如：</p>
+<ul>
+<li>setting中保存了编译相关的配置</li>
+<li>projectname 中保存了项目名称</li>
+<li>appid保存了小程序的账号id</li>
+</ul>
+<h4 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a>sitemap.json</h4><p>微信现已开放小程序内搜索，效果类似与PC网页的SEO.sitemap.json文件用来配置小程序页面是否允许微信索引。当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中</p>
+<h4 id="页面的-json配置文件"><a href="#页面的-json配置文件" class="headerlink" title="页面的.json配置文件"></a>页面的.json配置文件</h4><p>小程序中的每一个页面，可以使用.json文件来对本页面的窗口外观进行配置，页面中的配置项会覆盖app.json的window中相同的配置项<br>例如，在index.json中改变导航栏的背景色<br> <figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   “usingComponents<span class="string">&quot;:&#123;&#125;,</span></span><br><span class="line"><span class="string"> &quot;</span>navigationBarBackgroundColo<span class="string">r&quot;:&quot;</span>#<span class="number">0</span>0b26a<span class="string">&quot;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="认识小程序页面"><a href="#认识小程序页面" class="headerlink" title="认识小程序页面"></a>认识小程序页面</h3><h4 id="新建小程序"><a href="#新建小程序" class="headerlink" title="新建小程序"></a>新建小程序</h4><p> 只需要在app.json-&gt;pages中新增页面的存放路径，小程序开发者工具可以自动创建对应的页面文件</p>
+<h4 id="修改项目首页"><a href="#修改项目首页" class="headerlink" title="修改项目首页"></a>修改项目首页</h4><p> 只需要调整app.json-&gt;pages数组中页面路径的前后顺序，即可修改项目的首页。小程序会把排在第一位的页面当作项目首页</p>
+<h4 id="什么是wxml"><a href="#什么是wxml" class="headerlink" title="什么是wxml"></a>什么是wxml</h4><p> 是小程序框架设计的一套标签语言，用来构建小程序页面的结构<br> <strong>与html的不同</strong></p>
+<ol>
+<li>标签名称不同</li>
+</ol>
+<ul>
+<li>HTML（div、span、img、a）</li>
+<li>wxml（view、text、image、navigato）</li>
+</ul>
+<ol start="2">
+<li>属性节点不同</li>
+</ol>
+<ul>
+<li><a href="#">超链接<a></li>
+<li><navigator url="/pages/home/home"></navigator></li>
+</ul>
+<ol start="3">
+<li>提供了类似vue中的模板语法</li>
+</ol>
+<ul>
+<li>数据绑定</li>
+<li>列表渲染</li>
+<li>条件渲染</li>
+</ul>
+<h4 id="什么是wxss"><a href="#什么是wxss" class="headerlink" title="什么是wxss"></a>什么是wxss</h4><p><strong>与css的不同</strong></p>
+<ol>
+<li>新增了rpx尺寸单位</li>
+</ol>
+<ul>
+<li>css中需要手动进行像素单位换算，例如rem</li>
+<li>wxss在底层支持新的尺寸单位rpx，在不同大小的屏幕上小程序会自动进行换算</li>
+</ul>
+<ol start="2">
+<li>提供了全局样式和局部样式</li>
+</ol>
+<ul>
+<li>项目根目录中的app.wxss会作用于所有小程序页面</li>
+<li>局部页面的.wxss样式仅对当前页面生效</li>
+</ul>
+<ol start="3">
+<li>wxss仅支持部分css选择器</li>
+</ol>
+<ul>
+<li>.class和#id</li>
+<li>element</li>
+<li>并集选择器、后代选择器</li>
+<li>::after和::before等伪类选择器</li>
+</ul>
+<h4 id="小程序中的-js文件"><a href="#小程序中的-js文件" class="headerlink" title="小程序中的 .js文件"></a>小程序中的 .js文件</h4><p>在小程序中，我们通过.js文件来处理用户的操作。例如：响应用户的点击、获取用户的位置等<br>有三类js文件：</p>
+<ol>
+<li><p>app.js<br>是整个小程序项目的入口文件，通过调用<strong>App()函数</strong>来启动整个小程序</p>
+</li>
+<li><p>页面的.js文件<br>是页面的入口文件，通过调用<strong>Page()函数</strong>来创建并运行页面</p>
+</li>
+<li><p>普通的.js文件<br>普通的功能模块文件，用来封装公共的函数或属性供页面使用</p>
+</li>
+</ol>
+<h3 id="小程序的宿主环境"><a href="#小程序的宿主环境" class="headerlink" title="小程序的宿主环境"></a>小程序的宿主环境</h3><h4 id="什么是宿主环境"><a href="#什么是宿主环境" class="headerlink" title="什么是宿主环境"></a>什么是宿主环境</h4><p>宿主环境是指程序运行所必须依赖的环境。<br>例如Android系统和ios系统是两个不同的宿主环境。Android版的微信app是不能在ios环境下运行的，所以Android是安卓软件的宿主环境，脱离了宿主环境的软件是没有任何意义的。</p>
+<h4 id="小程序的宿主环境-1"><a href="#小程序的宿主环境-1" class="headerlink" title="小程序的宿主环境"></a>小程序的宿主环境</h4><p>手机微信是小程序的宿主环境，小程序借助宿主环境提供的能力，可以完成许多普通网页无法完成的功能，例如：微信扫码，微信支付，微信登陆，地理定位……</p>
+<h4 id="小程序宿主环境包含的内容"><a href="#小程序宿主环境包含的内容" class="headerlink" title="小程序宿主环境包含的内容"></a>小程序宿主环境包含的内容</h4><ol>
+<li>通信模型</li>
+<li>运行机制</li>
+<li>组件</li>
+<li>API</li>
+</ol>
+<h4 id="通信模型"><a href="#通信模型" class="headerlink" title="通信模型"></a>通信模型</h4><p><strong>通信主体</strong><br>小程序中通信的主体是渲染层和逻辑层，其中</p>
+<ol>
+<li>wxml模板和wxss样式工作在渲染层</li>
+<li>js脚本工作在逻辑层</li>
+</ol>
+<p><strong>通信模型</strong><br>小程序中的通信模型分为两部分</p>
+<ol>
+<li>渲染层和逻辑层之间的通信：由微信客户端进行转发</li>
+<li>逻辑层和第三方服务器之间的通信：由微信客户端进行转发</li>
+</ol>
+<h4 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h4><p><strong>小程序启动过程</strong></p>
+<ol>
+<li>把小程序的代码包下载到本地</li>
+<li>解析app.json全局配置文件</li>
+<li>执行app.js小程序入口文件，调用App()创建小程序实例</li>
+<li>渲染小程序首页</li>
+<li>小程序启动完成</li>
+</ol>
+<p><strong>页面渲染过程</strong></p>
+<ol>
+<li>加载解析页面的.json配置文件</li>
+<li>加载页面的.wxml模板和.wxss样式</li>
+<li>执行页面的.js文件，调用Page()创建页面实例</li>
+<li>页面渲染完成</li>
+</ol>
+<h3 id="小程序的宿主环境-组件"><a href="#小程序的宿主环境-组件" class="headerlink" title="小程序的宿主环境-组件"></a>小程序的宿主环境-组件</h3><h4 id="视图容器"><a href="#视图容器" class="headerlink" title="视图容器"></a>视图容器</h4><ol>
+<li>view<br>类似div，块级元素，用来布局<br>使用：<br>横向：父级display：flex;<br>  justify-content:space-around;</li>
+<li>scroll-view<br>可滚动的视图区域，常用来实现滚动列表效果</li>
+</ol>
+<ul>
+<li>scroll-y 属性：允许纵向滚动</li>
+<li>scroll-x 属性：允许横向滚动</li>
+<li>使用竖向滚动时，必须给scroll-view 一个固定高度</li>
+<li>使用横向滚动时，必须给scroll-view 一个固定宽度<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">scroll</span>-<span class="built_in">view</span> class=<span class="string">&quot;container&quot;</span> <span class="keyword">scroll</span>-y&gt;</span><br><span class="line">  &lt;<span class="built_in">view</span>&gt;A&lt;<span class="built_in">view</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">view</span>&gt;B&lt;<span class="built_in">view</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">view</span>&gt;C&lt;<span class="built_in">view</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">scroll</span>-<span class="built_in">view</span>&gt;</span><br><span class="line"></span><br><span class="line">.container&#123;</span><br><span class="line">  <span class="comment">/*给scroll-view 固定高度*/</span></span><br><span class="line">  height：<span class="number">120</span>px;</span><br><span class="line">  width:<span class="number">100</span>px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li><p>swiper 和 swiper-item<br>轮播图容器组件和轮播图的项目组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">swiper</span> <span class="attr">class</span>=<span class="string">&quot;swiper-container&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第一个轮播图 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>A<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二个轮播图 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>B<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第三个轮播图 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>C<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.swiper-container</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">swiper-item<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>)&#123;</span><br><span class="line">  <span class="attribute">background-color</span>:lightgreen;</span><br><span class="line">&#125;</span><br><span class="line">swiper-item<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="attribute">background-color</span>:lightblue;</span><br><span class="line">&#125;</span><br><span class="line">swiper-item<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="attribute">background-color</span>:lightpink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>swiper 组件的常用属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>indicator</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否显示面板指示点</td>
+</tr>
+<tr>
+<td>indicator-color</td>
+<td>color</td>
+<td>rgba(0,0,0,.3)</td>
+<td>指示点颜色</td>
+</tr>
+<tr>
+<td>indicator-active-color</td>
+<td>color</td>
+<td>#000000</td>
+<td>当前选中的指示点颜色</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否自动切换</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>number</td>
+<td>5000</td>
+<td>自动切换时间间隔</td>
+</tr>
+<tr>
+<td>circular</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否采用衔接滑动</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常用的基础内容组件<br><strong>text</strong></p>
+</li>
+</ol>
+<ul>
+<li>文本组件</li>
+<li>类似于HTML中的span标签，是一个行内元素<br>通过text组件中的selectable属性，实现长按选中文本内容的效果<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">手机号支持长按选中效果</span><br><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">selectable</span>&gt;</span>123456789<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<strong>rich-text</strong></li>
+<li>富文本组件</li>
+<li>支持把HTML字符串渲染为WXML结构<br>通过rich-text组件的nodes属性节点，把HTML字符串渲染为对应的UI结构</li>
+</ul>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;rich-<span class="built_in">text</span> nodes=<span class="string">&quot;&lt;h1 style=&#x27;color:pink;&#x27;&gt;标题&lt;/h1&gt;&quot;</span>&gt;&lt;/rich-<span class="built_in">text</span>&gt;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>其他常用组件<br> <strong>button</strong></li>
+</ol>
+<ul>
+<li>按钮组件</li>
+<li>功能比HTML中的button按钮丰富</li>
+<li>通过open-type属性可以调用微信提供的各种功能（客服、转发、获取用户授权、获取用户信息等）</li>
+</ul>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- 普通按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>主色调按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;warn&quot;</span>&gt;</span>警告按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 小尺寸按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span>&gt;</span>主色调按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;warn&quot;</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span>&gt;</span>警告按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 镂空按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span> <span class="attr">plain</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span> <span class="attr">plain</span>&gt;</span>主色调按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;warn&quot;</span> <span class="attr">size</span>=<span class="string">&quot;mini&quot;</span> <span class="attr">plain</span>&gt;</span>警告按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p> <strong>image</strong></p>
+<ul>
+<li>图片组件</li>
+<li>image组件默认宽度约为300px，高度约为240px</li>
+</ul>
+<blockquote>
+<p>image组件的mode属性<br>image组件的mode属性用来指定图片的裁剪和缩放模式，常用的mode属性如下：</p>
+<table>
+<thead>
+<tr>
+<th>mode值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>scaleToFill</td>
+<td>（默认值）缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满image元素</td>
+</tr>
+<tr>
+<td>aspectFit</td>
+<td>缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来</td>
+</tr>
+<tr>
+<td>aspectFill</td>
+<td>缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取</td>
+</tr>
+<tr>
+<td>widthFix</td>
+<td>缩放模式，宽度不变，高度自动变化，保持原图宽高不变</td>
+</tr>
+<tr>
+<td>heightFix</td>
+<td>缩放模式，高度不变，宽度自动变化，保持原图宽高不变</td>
+</tr>
+</tbody></table>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- image组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;/images/0.jpg&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;/images/0.jpg&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;aspectFit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;/images/0.jpg&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;aspectFill&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;/images/0.jpg&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;/images/0.jpg&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;heightFix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> <strong>navigator</strong></p>
+<ul>
+<li>页面导航组件</li>
+<li>类似于HTML中的a标签</li>
+</ul>
+<h4 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h4><h4 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h4><h4 id="导航组件"><a href="#导航组件" class="headerlink" title="导航组件"></a>导航组件</h4><h4 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h4><h4 id="map地图组件"><a href="#map地图组件" class="headerlink" title="map地图组件"></a>map地图组件</h4><h4 id="canvas画布组件"><a href="#canvas画布组件" class="headerlink" title="canvas画布组件"></a>canvas画布组件</h4><h4 id="开放能力"><a href="#开放能力" class="headerlink" title="开放能力"></a>开放能力</h4><h4 id="无障碍访问"><a href="#无障碍访问" class="headerlink" title="无障碍访问"></a>无障碍访问</h4><h3 id="小程序的宿主环境-API"><a href="#小程序的宿主环境-API" class="headerlink" title="小程序的宿主环境-API"></a>小程序的宿主环境-API</h3><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ol>
+<li>事件监听API</li>
+</ol>
+<ul>
+<li>特点：以on开头，用来监听某些事件的触发</li>
+<li>举例：wx.onWindowResize(function callback)监听窗口尺寸变化的事件</li>
+</ul>
+<ol start="2">
+<li>同步API</li>
+</ol>
+<ul>
+<li>特点1：以Sync结尾的API都是同步API</li>
+<li>特点2：同步API的执行结果，可以通过函数返回值直接获取，如果执行出错会抛出异常</li>
+<li>举例：wx.setStorageSync(‘key’,’value’)向本地存储中写入内容</li>
+</ul>
+<ol start="3">
+<li>异步API</li>
+</ol>
+<ul>
+<li>特点：类似于JQuery中的$.ajax(options)函数，需要通过success、fall、complete接收调用的结果</li>
+<li>举例：wx.request()发起网络数据请求，通过success回调函数接收数据</li>
+</ul>
+<h3 id="协同工作和发布"><a href="#协同工作和发布" class="headerlink" title="协同工作和发布"></a>协同工作和发布</h3><h4 id="协同工作"><a href="#协同工作" class="headerlink" title="协同工作"></a>协同工作</h4><ol>
+<li><p>了解权限管理需求</p>
+</li>
+<li><p>了解项目成员的组织结构<br>项目管理者：统筹整个项目的进展和风险，把控小程序对外发布的节奏<br>产品组：提需求<br>设计组：出设计方案<br>开发组：代码开发<br>测试组：项目测试</p>
+</li>
+<li><p>小程序的开发流程<br>提出需求：产品组<br>设计：设计组<br>开发：开发组<br>体验：产品组、设计组<br>测试：测试组<br>发布：管理者</p>
+</li>
+<li><p>成员管理<br>管理员<br> 项目成员：参与小程序开发、运营，可登录小程序管理后台、管理员可以添加、删除项目成员，并设置项目成员的角色。<br>  运营者、开发者、数据分析者<br>体验成员：参与小程序内测体验的成员、可使用体验版小程序，但不属于项目成员，管理员及项目均可添加、删除体验成员</p>
+</li>
+<li><p>小程序版本</p>
+</li>
+</ol>
+<ul>
+<li>开发版本</li>
+<li>体验版本</li>
+<li>审核中的版本</li>
+<li>线上版本</li>
+</ul>
+<ol start="6">
+<li>小程序发布上线的整体步骤<br><strong>上传代码</strong></li>
+<li>点击开发者工具顶部工具栏的“上传”按钮</li>
+<li>填写版本号以及项目备注</li>
+<li>在后台查看上传之后的版本<br>登录小程序管理后台-&gt;管理-&gt;版本管理-&gt;版本管理-&gt;开发版本<br><strong>提交审核</strong></li>
+</ol>
+<p><strong>发布</strong></p>
+<ol start="7">
+<li><p>获取小程序码<br>登录小程序管理后台-&gt;设置-&gt;基本设置-&gt;基本信息-&gt;小程序码及线下物料下载</p>
+</li>
+<li><p>查看小程序运营数据的两种方式</p>
+</li>
+</ol>
+<ul>
+<li><p>在小程序后台查看<br>登录小程序管理后台，点击侧边栏的“统计”，点击相应的tab可以看到相关的数据</p>
+</li>
+<li><p>使用“小程序数据助手”小程序查看</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>如何创建小程序项目<br>微信开发者工具的使用、appID的获取</li>
+<li>小程序项目的基本组成结构<br>app.js\app.json\app.wxss\pages文件夹</li>
+<li>小程序页面由几部分组成<br>wxml、wxss、json、js</li>
+<li>小程序中常见的组件如何使用<br>view、text、image</li>
+<li>小程序如何进行协同开发和发布<br>成员管理、发布小程序、查看运营数据</li>
+</ol>
+<h3 id="小程序模板与配置"><a href="#小程序模板与配置" class="headerlink" title="小程序模板与配置"></a>小程序模板与配置</h3><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ol>
+<li>能够使用wxml模板语法渲染页面结构</li>
+<li>能够使用wxss样式美化页面结构</li>
+<li>能够使用app.json对小程序进行全局性配置</li>
+<li>能够使用page,json对小程序页面进行个性化配置</li>
+<li>能够知道如何发起网络数据请求</li>
+</ol>
+<h4 id="wxml模板语法"><a href="#wxml模板语法" class="headerlink" title="wxml模板语法"></a>wxml模板语法</h4><ol>
+<li>数据绑定的基本原则</li>
+</ol>
+<ul>
+<li>在data中定义数据<br>在页面对应的.js文件中，把数据定义到data对象中即可<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 页面的初始数据</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> data: &#123;</span><br><span class="line">   <span class="comment">// 字符串类型的数据</span></span><br><span class="line">   info:<span class="string">&quot;hello world!&quot;</span>,</span><br><span class="line">   //数组类型的数据</span><br><span class="line">   msgList:[&#123;msg:<span class="string">&#x27;hello&#x27;</span>&#125;,&#123;msg:<span class="string">&#x27;big cute!&#x27;</span>&#125;]</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure></li>
+<li>在wxml中使用数据（也叫动态绑定内容）<br>Mustache语法{双大括号}将变量包起来即可。语法格式：<br><view><view><br>也叫插值表达式</li>
+</ul>
+<ol start="2">
+<li>Mustache语法的主要应用场景</li>
+</ol>
+<ul>
+<li>绑定内容</li>
+<li>绑定属性</li>
+<li>运算（三元运算、算术运算等）</li>
+</ul>
+<ol start="3">
+<li><p>动态绑定属性</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&quot;</span></span></span><span class="template-variable">&#123;&#123;<span class="name">imgSrc</span>&#125;&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;aspectFit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">view</span>&gt;</span>随机数字</span><span class="template-variable">&#123;&#123;<span class="name">radom</span>&#125;&#125;</span><span class="template-variable">&#123;&#123;<span class="name">radom</span>&gt;<span class="number">5</span> ? <span class="string">&#x27;大于5&#x27;</span>:<span class="string">&#x27;小于等于5&#x27;</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"> data: &#123;</span></span><br><span class="line"><span class="language-xml">    // 字符串类型的数据</span></span><br><span class="line"><span class="language-xml">    info:&quot;hello world!&quot;,</span></span><br><span class="line"><span class="language-xml">    //数组类型的数据</span></span><br><span class="line"><span class="language-xml">    msgList:[&#123;msg:&#x27;hello&#x27;&#125;,&#123;msg:&#x27;big cute!&#x27;&#125;],</span></span><br><span class="line"><span class="language-xml">    imgSrc:&quot;/images/0.jpg&quot;,</span></span><br><span class="line"><span class="language-xml">    radom:Math.random()*10//生成10以内的随机数</span></span><br><span class="line"><span class="language-xml">  &#125;,</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>算数运算</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">radom:Math.random().toFixed(2)//生成一个带两位小数的随机数，例如0.34</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">view</span>&gt;</span>随机数字</span><span class="template-variable">&#123;&#123;<span class="name">radom</span>*<span class="number">100</span>&gt;<span class="number">50</span> ? <span class="string">&#x27;大于50&#x27;</span>:<span class="string">&#x27;小于等于50&#x27;</span>&#125;&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件绑定<br>事件：渲染层到逻辑层的通讯方式。通过事件可以将用户在渲染层产生的行为，反馈到逻辑层进行业务的处理</p>
+</li>
+</ol>
+<p><strong>小程序中常用的事件</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>绑定方式</th>
+<th>事件描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tap</td>
+<td>bindtap或bind:tap</td>
+<td>手指触摸后马上离开，类似与html中的click事件</td>
+</tr>
+<tr>
+<td>input</td>
+<td>bindinput或bind:input</td>
+<td>文本框的输入事件</td>
+</tr>
+<tr>
+<td>change</td>
+<td>bindchange或bind:change</td>
+<td>状态改变时触发</td>
+</tr>
+</tbody></table>
+<ol start="6">
+<li>事件对象的属性列表<br>当事件回调触发的时候，会收到一个事件对象event，它的详细属性如下表所示<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>String</td>
+<td>事件类型</td>
+</tr>
+<tr>
+<td>timeStamp</td>
+<td>integer</td>
+<td>页面打开到触发事件所经过的毫秒数</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Object</td>
+<td>触发事件的组件的一些属性值集合</td>
+</tr>
+<tr>
+<td>currentTarget</td>
+<td>Object</td>
+<td>当前组件中的一些属性值集合</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>Object</td>
+<td>额外的信息</td>
+</tr>
+<tr>
+<td>touches</td>
+<td>Array</td>
+<td>触摸事件，当前停留在屏幕中的触摸点信息的数组</td>
+</tr>
+<tr>
+<td>changedTouches</td>
+<td>Array</td>
+<td>触摸事件，当前变化的触摸点信息的数组</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h4 id="wxss模板样式"><a href="#wxss模板样式" class="headerlink" title="wxss模板样式"></a>wxss模板样式</h4><h4 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h4><h4 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h4><h4 id="网络数据请求"><a href="#网络数据请求" class="headerlink" title="网络数据请求"></a>网络数据请求</h4><h4 id="案例-本地生活（首页）"><a href="#案例-本地生活（首页）" class="headerlink" title="案例-本地生活（首页）"></a>案例-本地生活（首页）</h4>
                 
             </div>
             <hr/>
@@ -865,18 +1278,17 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/13/wei-xin-xiao-cheng-xu/">
+                <a href="/2023/11/30/vue-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="vue入门">
                         
-                        <span class="card-title">微信小程序</span>
+                        <span class="card-title">vue入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -886,9 +1298,9 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -897,7 +1309,6 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1117,7 +1528,7 @@ API不同小程序中无法调用DOM和BOM的API但小程序可以调用微信�
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">杨宛荧</a>
            
